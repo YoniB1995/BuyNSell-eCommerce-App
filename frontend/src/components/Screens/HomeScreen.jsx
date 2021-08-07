@@ -1,17 +1,33 @@
-import styled from 'styled-components'
-
-const HomeScreenBody = styled.div` 
-
-`
+import styled from "styled-components";
+import Products from "../Products/Products";
 
 const HomeScreen = () => {
-    return (
-        <HomeScreenBody>
-            
-        </HomeScreenBody>
-    )
-}
+  return (
+    <HomeScreenBody>
+      <HomeScreenTitle>Latest Products</HomeScreenTitle>
 
-export default HomeScreen
+      <HomeScreenProducts>
+        <Products />
+      </HomeScreenProducts>
+    </HomeScreenBody>
+  );
+};
 
+export default HomeScreen;
 
+const HomeScreenBody = styled.div`
+  max-width: 1300px;
+  margin: 1rem auto;
+`;
+
+const HomeScreenTitle = styled.h2`
+  font-size: 1.5rem;
+  color: #171717;
+  margin-bottom: 1rem;
+  margin-left: 8px;
+`;
+
+const HomeScreenProducts = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+`;

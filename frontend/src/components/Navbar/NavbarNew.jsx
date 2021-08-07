@@ -3,11 +3,11 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "../../App.css";
 
-export default function Navbar() {
+export default function Navbar({ click }) {
   return (
     <NavBody>
       <NavBarLogo>
-        <h2>Mern Shopping Cart</h2>
+        <h2>AmoZa Shopping Cart</h2>
       </NavBarLogo>
       <NavBarLinks>
         <li>
@@ -20,7 +20,7 @@ export default function Navbar() {
           </Link>
         </li>
       </NavBarLinks>
-      <HamburgerMenu>
+      <HamburgerMenu onClick={click}>
         <div></div>
         <div></div>
         <div></div>
