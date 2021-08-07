@@ -1,12 +1,18 @@
 import styled from "styled-components";
 import Products from "../Products/Products";
+import "./Homescreen.css";
 
 const HomeScreen = () => {
   return (
     <HomeScreenBody>
       <HomeScreenTitle>Latest Products</HomeScreenTitle>
 
-      <HomeScreenProducts>
+      <HomeScreenProducts className="homescreen__products">
+        <Products className="product" />
+        <Products />
+        <Products />
+        <Products />
+        <Products />
         <Products />
       </HomeScreenProducts>
     </HomeScreenBody>

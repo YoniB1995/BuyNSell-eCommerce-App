@@ -41,6 +41,18 @@ const ProductBody = styled.div`
     height: 170px;
     border-radius: 8px;
   }
+
+  @media (max-width: 1232px) {
+    width: 310px;
+  }
+
+  @media (max-width: 915px) {
+    width: 330px;
+  }
+
+  @media (max-width: 705px) {
+    width: 380px;
+  }
 `;
 
 const ProductInfo = styled.div`
