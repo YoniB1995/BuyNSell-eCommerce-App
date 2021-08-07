@@ -31,6 +31,7 @@ export default function Navbar() {
 
 const NavBody = styled.div`
   width: 100%;
+  height: 110px;
   background-color: #171717;
   display: flex;
   justify-content: space-between;
@@ -44,6 +45,12 @@ const NavBarLogo = styled.div`
     color: #f4f4f4;
     font-size: 1.4rem;
     cursor: pointer;
+  }
+
+  @media (max-width: 960px) {
+    h2 {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -81,12 +88,16 @@ const NavBarLinks = styled.ul`
       align-items: center;
     }
   }
+
+  @media (max-width: 960px) {
+    display: none;
+  }
 `;
 
 const HamburgerMenu = styled.div`
   width: 30px;
   height: 30px;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -101,5 +112,9 @@ const HamburgerMenu = styled.div`
     div {
       background: #dd219e;
     }
+  }
+
+  @media (max-width: 960px) {
+    display: flex;
   }
 `;
