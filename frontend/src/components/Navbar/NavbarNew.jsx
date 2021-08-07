@@ -19,6 +19,9 @@ export default function Navbar({ click }) {
             </span>
           </Link>
         </li>
+        <li>
+          <Link to="/product/:id">Shop</Link>
+        </li>
       </NavBarLinks>
       <HamburgerMenu onClick={click}>
         <div></div>
