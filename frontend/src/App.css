@@ -20,7 +20,7 @@ img {
   border-radius: 10px;
 }
 
-.cart__link :hover {
+.cart__link:hover {
   background: #dd219e;
   color: #f4f4f4;
 }

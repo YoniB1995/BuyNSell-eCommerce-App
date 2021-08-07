@@ -111,12 +111,6 @@ const HamburgerMenu = styled.div`
     background: #f4f4f4;
   }
 
-  :hover {
-    div {
-      background: #dd219e;
-    }
-  }
-
   @media (max-width: 960px) {
     display: flex;
   }
