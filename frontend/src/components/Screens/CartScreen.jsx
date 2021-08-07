@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+const CartScreenBody = styled.div` 
+
+`
+
 const CartScreen = () => {
     return (
         <CartScreenBody>
@@ -11,6 +15,3 @@ const CartScreen = () => {
 export default CartScreen
 
 
-const CartScreenBody = styled.div` 
-
-`

@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+const HomeScreenBody = styled.div` 
+
+`
+
 const HomeScreen = () => {
     return (
         <HomeScreenBody>
@@ -11,6 +15,3 @@ const HomeScreen = () => {
 export default HomeScreen
 
 
-const HomeScreenBody = styled.div` 
-
-`

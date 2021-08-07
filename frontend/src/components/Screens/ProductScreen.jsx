@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+
+const ProductScreenBody = styled.div` 
+
+`
+
 const ProductScreen = () => {
     return (
         <ProductScreenBody>
@@ -10,7 +15,3 @@ const ProductScreen = () => {
 
 export default ProductScreen
 
-
-const ProductScreenBody = styled.div` 
-
-`
