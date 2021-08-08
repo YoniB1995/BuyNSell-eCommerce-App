@@ -1,4 +1,4 @@
-@media (max-width: 1232px) {
+@media (max-width: 1240) {
   .homescreen__products {
     grid-template-columns: repeat(3, 1fr);
   }

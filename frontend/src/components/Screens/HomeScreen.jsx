@@ -8,7 +8,7 @@ const HomeScreen = () => {
       <HomeScreenTitle>Latest Products</HomeScreenTitle>
 
       <HomeScreenProducts className="homescreen__products">
-        <Products className="product" />
+        <Products />
         <Products />
         <Products />
         <Products />
