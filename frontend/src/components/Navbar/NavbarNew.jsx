@@ -35,7 +35,7 @@ export default function Navbar({ click }) {
 const NavBody = styled.div`
   width: 100%;
   height: 110px;
-  background-color: #171717;
+  background-color: #232f3e;
   display: flex;
   justify-content: space-between;
   align-items: center;
