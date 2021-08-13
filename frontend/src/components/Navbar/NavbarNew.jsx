@@ -85,7 +85,10 @@ const NavBarLinks = styled.ul`
     }
     a {
       text-decoration: none;
-      color: #f4f4f4;
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 10px;
+      color: #171717;
       font-size: 1.2rem;
       display: flex;
       align-items: center;
