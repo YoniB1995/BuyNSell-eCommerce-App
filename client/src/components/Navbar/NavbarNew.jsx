@@ -7,7 +7,12 @@ export default function Navbar({ click }) {
   return (
     <NavBody>
       <NavBarLogo>
-        <h2>AmoZa Shopping Cart</h2>
+        <h2>
+          <Link to="/" className="linkMainAmoza">
+            {" "}
+            AmoZa Shopping Cart
+          </Link>
+        </h2>
       </NavBarLogo>
       <NavBarLinks>
         <li>
@@ -50,6 +55,9 @@ const NavBarLogo = styled.div`
     cursor: pointer;
   }
 
+  .linkMainAmoza {
+    text-transform: none;
+  }
   @media (max-width: 960px) {
     h2 {
       font-size: 1rem;

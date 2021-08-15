@@ -8,6 +8,8 @@ import HomeScreen from "./components/Screens/Homescreen";
 import ProductScreen from "./components/Screens/Productscreen";
 import Backdrop from "./components/Backdrop/Backdrop";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
+import { Footer } from "./components/Footer/Footer";
+import VideoGamesScreen from "./components/Screens/VideoGamesScreen";
 
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
@@ -21,9 +23,16 @@ function App() {
           <Switch>
             <Route exact path="/" component={HomeScreen} />
             <Route exact path="/product/:id" component={ProductScreen} />
+            <Route
+              exact
+              path="/videogames/product"
+              component={VideoGamesScreen}
+            />
+            <Route exact path="/screens/product" component={VideoGamesScreen} />
             <Route exact path="/cart" component={CartScreen} />
           </Switch>
         </main>
+        <Footer />
       </div>
     </Router>
   );
