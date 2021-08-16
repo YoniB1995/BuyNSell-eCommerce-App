@@ -1,11 +1,14 @@
 require('dotenv').config();
 const mongoose = require('mongoose')
 const MONGO_URL = process.env.MONGO_URL
+const MONGO_LOCAL_URL = process.env.MONGO_LOCAL_URL
 
 const connectDB = async () => {
-        await mongoose.connect("mongodb+srv://yoni:046344579@cluster0.b7rbb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
+        await mongoose.connect('mongodb://localhost:27017',{
             useNewUrlParser:true,
-            useUnifiedTopology:true
+            useUnifiedTopology:true,
+            useCreateIndex:true,
+            useFindAndModify:true
         });
 }
 connectDB().then(()=>{

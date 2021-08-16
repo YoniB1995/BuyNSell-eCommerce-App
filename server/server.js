@@ -2,8 +2,11 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const connectDB = require('./db')
+const errorHandler = require('./middleware/error')
+
 const cors = require('cors');
 const productRoutes = require('./routes/productRoutes');
+const userAuth = require('./routes/auth');
 
 connectDB.on('error',()=>{
     console.log('error')
@@ -14,7 +17,10 @@ app.use(express.urlencoded({extended:true})); // params יכולת לשלוף מ
 app.use(cors());
 
 app.use('/products',productRoutes)
+app.use('/userauth',userAuth)
 
+// Error Handler 
+app.use(errorHandler)
 
 const PORT = process.env.PORT || 5000
 
