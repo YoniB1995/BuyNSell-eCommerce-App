@@ -4,15 +4,13 @@ import { Link } from "react-router-dom";
 import "../../../App.css";
 
 export default function Navbar({ click }) {
+  const BackToMenu = () => {
+    return <Link to="/"></Link>;
+  };
   return (
     <NavBody>
       <NavBarLogo>
-        <h2>
-          <Link to="/" className="linkMainAmoza">
-            {" "}
-            AmoZa Shopping Cart
-          </Link>
-        </h2>
+        <h2>AmoZa Shopping Cart</h2>
       </NavBarLogo>
       <NavBarLinks>
         <li>
@@ -26,6 +24,9 @@ export default function Navbar({ click }) {
         </li>
         <li>
           <Link to="/product/:id">Shop</Link>
+        </li>
+        <li>
+          <Link to="/">Home</Link>
         </li>
       </NavBarLinks>
       <HamburgerMenu onClick={click}>

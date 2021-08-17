@@ -55,11 +55,20 @@ const LoginScreen = ({ history }) => {
             placeholder="Enter Email:"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            tabIndex={1}
           />
         </div>
 
         <div className="form-group">
           <label htmlFor="password">Password:</label>
+          <Link
+            to="/forgotpass"
+            className="login-screen__forgotpassword"
+            tabIndex={4}
+          >
+            {" "}
+            Forgot Password?
+          </Link>
           <input
             type="password"
             required
@@ -67,10 +76,11 @@ const LoginScreen = ({ history }) => {
             placeholder="Enter password:"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            tabIndex={2}
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary" tabIndex={3}>
           Login
         </button>
 

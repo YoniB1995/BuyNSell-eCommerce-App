@@ -14,12 +14,22 @@ const VideoGamesScreen = () => {
       <HomeScreenTitle>Latest Products</HomeScreenTitle>
 
       <HomeScreenProducts className="homescreen__products">
-        <Products />
-        <Products />
-        <Products />
-        <Products />
-        <Products />
-        <Products />
+        {loading ? (
+          <h2>Loading...</h2>
+        ) : error ? (
+          <h2>{error}</h2>
+        ) : (
+          products.map((product) => (
+            <Products
+              key={product._id}
+              productId={product._id}
+              name={product.name}
+              price={product.price}
+              description={product.description}
+              imageUrl={product.imageUrl}
+            />
+          ))
+        )}
       </HomeScreenProducts>
     </>
   );

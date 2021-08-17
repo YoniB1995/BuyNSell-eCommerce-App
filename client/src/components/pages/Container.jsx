@@ -15,7 +15,7 @@ const Container = () => {
   return (
     <main>
       <Switch>
-        {/* <PrivateRoute exact path="/" component={PrivateScreen} /> */}
+        <PrivateRoute exact path="/private" component={PrivateScreen} />
         <Route exact path="/" component={HomeScreen} />
         <Route exact path="/product/:id" component={ProductScreen} />
         <Route exact path="/videogames/product" component={VideoGamesScreen} />

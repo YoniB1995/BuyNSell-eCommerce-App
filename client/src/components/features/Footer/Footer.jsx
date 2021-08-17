@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import React from "react";
 import FooterBottom from "./FooterBottom";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <>
       <FooterBody>
-        <FooterGridColumn></FooterGridColumn>
+        <FooterGridColumn>
+          <Link to="/">Home</Link>
+        </FooterGridColumn>
         <FooterGridColumn>
           <h4>Get to know us</h4>
           <p>Careers</p>

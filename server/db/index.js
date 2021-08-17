@@ -4,7 +4,7 @@ const MONGO_URL = process.env.MONGO_URL
 const MONGO_LOCAL_URL = process.env.MONGO_LOCAL_URL
 
 const connectDB = async () => {
-        await mongoose.connect('mongodb://localhost:27017',{
+        await mongoose.connect('mongodb://localhost:27017/mongoPractice',{
             useNewUrlParser:true,
             useUnifiedTopology:true,
             useCreateIndex:true,

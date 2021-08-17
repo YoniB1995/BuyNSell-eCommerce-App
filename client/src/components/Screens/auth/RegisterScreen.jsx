@@ -35,7 +35,7 @@ const RegisterScreen = ({ history }) => {
     }
     try {
       const { data } = await axios.post(
-        "/auth/register",
+        "./userauth/register",
         { username, email, password },
         config
       );

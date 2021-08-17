@@ -3,21 +3,16 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "./Product.css";
 
-const Products = () => {
+const Products = ({ imageUrl, name, price, description, productId }) => {
   return (
     <ProductBody>
-      <img
-        src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80"
-        alt="product name"
-      />
+      <img src={imageUrl} alt={name} />
       <ProductInfo>
-        <InfoName>Product 1</InfoName>
-        <InfoDesc>
-          lorem lasdla epwgtlewpg asfa ajsfjak zjxfiajf a xkzvj zvnka{" "}
-        </InfoDesc>
-        <InfoPrice>$499.99</InfoPrice>
+        <InfoName>{name}</InfoName>
+        <InfoDesc>{description.substring(0, 100)}...</InfoDesc>
+        <InfoPrice>${price}</InfoPrice>
 
-        <Link to={`/product/${1111}`} className="info__button">
+        <Link to={`/product/${productId}`} className="info__button">
           View
         </Link>
       </ProductInfo>
