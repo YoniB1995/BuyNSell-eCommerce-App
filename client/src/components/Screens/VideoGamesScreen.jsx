@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Products from "../Products/Products";
-import "./Homescreen.css";
+import Products from "../features/Products/Products";
+import "../Screens/Homescreen.css";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 

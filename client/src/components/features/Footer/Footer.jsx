@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React from "react";
 import FooterBottom from "./FooterBottom";
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <>
       <FooterBody>
@@ -41,6 +41,8 @@ export const Footer = () => {
     </>
   );
 };
+
+export default Footer;
 
 const FooterBody = styled.div`
   padding: 4rem;

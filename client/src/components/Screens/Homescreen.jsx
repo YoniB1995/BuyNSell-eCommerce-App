@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import Products from "../Products/Products";
+import Products from "../features/Products/Products";
 import "./Homescreen.css";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import ProductScreen from "./Productscreen";
 import { Link } from "react-router-dom";
-import "../Products/Product.css";
+import "../features/Products/Product.css";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();

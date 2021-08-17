@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import CartItem from "../CartItem/CartItem";
+import CartItem from "../features/CartItem/CartItem";
 
 const CartScreen = () => {
   return (
