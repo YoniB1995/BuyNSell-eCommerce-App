@@ -7,6 +7,7 @@ const errorHandler = require('./middleware/error')
 const cors = require('cors');
 const productRoutes = require('./routes/productRoutes');
 const userAuth = require('./routes/auth');
+const privateAuth = require('./routes/private')
 
 connectDB.on('error',()=>{
     console.log('error')
@@ -18,6 +19,7 @@ app.use(cors());
 
 app.use('/products',productRoutes)
 app.use('/userauth',userAuth)
+app.use('/api/private',privateAuth)
 
 // Error Handler 
 app.use(errorHandler)

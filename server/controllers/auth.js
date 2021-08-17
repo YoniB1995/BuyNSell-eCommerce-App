@@ -9,16 +9,13 @@ const registerUser = async (req,res,next) => {
             username,email,password
         })
 
-        res.status(201).json({
-            success:true,
-            token:'2313gar32'
-        })
+        sendToken(user, 201, res)
     } catch(error){
         next(error)
     }
 }
 
-const loginUser = async (req,res) => {
+const loginUser = async (req,res,next) => {
     const { email , password } = req.body
 
     if ( !email || !password) {
@@ -38,10 +35,7 @@ const loginUser = async (req,res) => {
             return next(new ErrorResponse("Invalid Credentials",401))
         }
 
-        res.status(200).json({
-            success:true,
-            token:"ghqih3321"
-        })
+            sendToken(user, 200, res)
 
     }catch(error){
         res.status(500).json({
@@ -62,5 +56,6 @@ const resetPassword = (req,res) => {
 module.exports = {registerUser,loginUser,forgotPassword,resetPassword}
 
 const sendToken = (user, statusCode, res) => {
-    const token = user.getSignToken();
+    const token = user.getSignedToken();
+    res.status(statusCode).json({success: true, token})
 }
