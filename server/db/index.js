@@ -17,6 +17,5 @@ connectDB().then(()=>{
     console.log(`Error Message - ${err.message}`)
 })
 
-
 module.exports = mongoose.connection;
 

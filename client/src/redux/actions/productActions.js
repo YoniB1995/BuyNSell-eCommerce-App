@@ -6,7 +6,7 @@ export const getProducts = () => async(dispatch) =>
     try {
         dispatch({type:actionTypes.GET_PRODUCTS_REQUEST})
 
-        const {data} = await axios.get("/api/products");
+        const {data} = await axios.get("/products");
 
         dispatch({
             type: actionTypes.GET_PRODUCTS_SUCCESS,
@@ -28,7 +28,7 @@ export const getProductsDetails = (id) => async(dispatch) =>
     try {
         dispatch({type:actionTypes.GET_PRODUCT_DETAILS_REQUEST})
 
-        const {data} = await fetch(`/api/products/${id}`);
+        const {data} = await axios.get(`/products/${id}`);
 
         dispatch({
             type: actionTypes.GET_PRODUCT_DETAILS_SUCCESS,
