@@ -4,9 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "setup": "npm install && cd client && npm install",
     "start": "node server/server.js",
-    "server": "nodemon server/server.js",
-    "client": "npm start --prefix client",
+    "server": "nodemon server/server.js ",
+    "client": "cd client && npm run start",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
     "data:import": "node client/apiScripts.js"
   },
   "keywords": [],
