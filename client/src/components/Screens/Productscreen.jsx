@@ -1,47 +1,72 @@
 import styled from "styled-components";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-const ProductScreen = () => {
+import { getProductsDetails } from "../../redux/actions/productActions";
+import { addToCart } from "../../redux/actions/cartActions";
+
+const ProductScreen = ({ match, history }) => {
+  const [qty, setQty] = useState(1);
+  const dispatch = useDispatch();
+
+  const productDetails = useSelector((state) => state.getProductsDetails);
+  const { loading, error, product } = productDetails;
+
+  useEffect(() => {
+    if (product && match.params.id !== product._id) {
+      dispatch(getProductsDetails(match.params.id));
+    }
+  }, [dispatch, product, match]);
   return (
     <ProductScreenBody>
-      <ProductScreenLeft>
-        <LeftImage>
-          <img
-            src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80"
-            alt="product name"
-          />
-        </LeftImage>
-        <LeftInfo>
-          <LeftName>Product 1</LeftName>
-          <p>Price: $499.99</p>
-          <p>
-            Description: Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Veniam ratione ex quidem asperiores, repellendus atque soluta
-            rem eos possimus reprehenderit!
-          </p>
-        </LeftInfo>
-      </ProductScreenLeft>
-      <ProductScreenRight>
-        <RightInfo>
-          <p>
-            Price: <span>$499.99</span>
-          </p>
-          <p>
-            Status: <span>In Stock</span>
-          </p>
-          <p>
-            Qty
-            <select>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-          </p>
-          <p>
-            <button type="button">Add To Cat</button>
-          </p>
-        </RightInfo>
-      </ProductScreenRight>
+      {loading ? (
+        <h2>Loading...</h2>
+      ) : error ? (
+        <h2>{error}</h2>
+      ) : (
+        <>
+          <ProductScreenLeft>
+            <LeftImage>
+              <img src={product.imageUrl} alt={product.name} />
+            </LeftImage>
+            <LeftInfo>
+              <LeftName>{product.name}</LeftName>
+              <p>Price: ${product.price}</p>
+              <p>Description: ${product.description}</p>
+            </LeftInfo>
+          </ProductScreenLeft>
+          <ProductScreenRight>
+            <RightInfo>
+              <p>
+                Price: <span>${product.price}</span>
+              </p>
+              <p>
+                Status:{" "}
+                <span>
+                  {product.countInStock > 0 ? "In Stock" : "Out of Stock"}
+                </span>
+              </p>
+              <p>
+                Qty
+                <select value={qty} onChange={(e) => setQty(e.target.value)}>
+                  {[...Array(product.countInStock).keys()].map((x) => (
+                    <option key={x + 1} value={x + 1}>
+                      {x + 1}
+                    </option>
+                  ))}
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </p>
+              <p>
+                <button type="button">Add To Cat</button>
+              </p>
+            </RightInfo>
+          </ProductScreenRight>
+        </>
+      )}
     </ProductScreenBody>
   );
 };
