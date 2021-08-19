@@ -17,8 +17,8 @@ const Container = () => {
       <Switch>
         <PrivateRoute exact path="/private" component={PrivateScreen} />
         <Route exact path="/" component={HomeScreen} />
-        <Route exact path="/product" component={ProductScreen} />
-        <Route exact path="/videogames/product" component={VideoGamesScreen} />
+        <Route exact path="/products/:id" component={ProductScreen} />
+        <Route exact path="/products" component={VideoGamesScreen} />
         <Route exact path="/login" component={LoginScreen} />
         <Route exact path="/register" component={RegisterScreen} />
         <Route exact path="/forgotpass" component={ForgotPassScreen} />
@@ -27,7 +27,6 @@ const Container = () => {
           path="/resetpass/:resetToken"
           component={ResetPassScreen}
         />
-        <Route exact path="/screens/product" component={VideoGamesScreen} />
         <Route exact path="/cart" component={CartScreen} />
       </Switch>
     </main>
