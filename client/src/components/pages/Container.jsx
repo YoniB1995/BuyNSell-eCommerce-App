@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import VideoGamesScreen from "../Screens/VideoGamesScreen";
-import LoginScreen from "../Screens/auth/LoginScreen";
-import RegisterScreen from "../Screens/auth/RegisterScreen";
-import ForgotPassScreen from "../Screens/auth/ForgotPassScreen";
-import ResetPassScreen from "../Screens/auth/ResetPassScreen";
-import CartScreen from "../Screens/Cartscreen";
-import HomeScreen from "../Screens/Homescreen";
-import ProductScreen from "../Screens/Productscreen";
-import PrivateScreen from "../Screens/auth/PrivateScreen";
+import VideoGamesScreen from "../screens/VideoGamesScreen";
+import LoginScreen from "../screens/auth/LoginScreen";
+import RegisterScreen from "../screens/auth/RegisterScreen";
+import ForgotPassScreen from "../screens/auth/ForgotPassScreen";
+import ResetPassScreen from "../screens/auth/ResetPassScreen";
+import CartScreen from "../screens/Cartscreen";
+import HomeScreen from "../screens/Homescreen";
+import ProductScreen from "../screens/Productscreen";
+import PrivateScreen from "../screens/auth/PrivateScreen";
 import PrivateRoute from "../routing/PrivateRoute";
 
 const Container = () => {

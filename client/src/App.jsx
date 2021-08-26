@@ -12,13 +12,13 @@ function App() {
   const [sideToggle, setSideToggle] = useState(false);
   return (
     <Router>
-      <div>
+      <>
         <Navbar click={() => setSideToggle(true)} />
         <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
         <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
         <Container />
         <Footer />
-      </div>
+      </>
     </Router>
   );
 }

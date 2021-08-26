@@ -3,7 +3,7 @@ import CartItem from "../features/CartItem/CartItem";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart, removeFromCart } from "../redux/actions/cartActions";
+import { addToCart, removeFromCart } from "../../redux/actions/cartActions";
 
 const CartScreen = () => {
   const dispatch = useDispatch();

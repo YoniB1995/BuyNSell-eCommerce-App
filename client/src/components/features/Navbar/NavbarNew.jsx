@@ -10,7 +10,7 @@ export default function Navbar({ click }) {
   return (
     <NavBody>
       <NavBarLogo>
-        <h2>AmoZa Shopping Cart</h2>
+        <h2>BuyNSell Shopping Market</h2>
       </NavBarLogo>
       <NavBarLinks>
         <li>
