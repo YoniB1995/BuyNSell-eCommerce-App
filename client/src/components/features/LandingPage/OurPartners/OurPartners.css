@@ -1,21 +1,17 @@
-.square-holder {
-  padding: 30px;
-  border: 1px solid #cecece;
-  align-items: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  background-color: #f1f1f1;
-  min-height: 200px;
+#blog {
+  width: 100%;
+  display: block;
+  background-color: #f4f4f4;
+  padding: 3rem 0rem 6rem;
 }
 
-.square-holder img {
-  max-width: 50%;
-  filter: grayscale(100%);
-  transition: all 0.3s;
+#blog .container {
+  margin: 0 auto;
+  width: 80%;
+  background-color: #f4f4f4;
 }
 
-.square-holder:hover img {
-  filter: none;
+#blog .container .blog-header {
+  text-align: center;
+  margin-bottom: 3rem;
 }

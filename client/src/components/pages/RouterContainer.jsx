@@ -10,13 +10,14 @@ import HomeScreen from "../screens/Homescreen";
 import ProductScreen from "../screens/Productscreen";
 import PrivateScreen from "../screens/auth/PrivateScreen";
 import PrivateRoute from "../routing/PrivateRoute";
+import UsersPage from "./UsersPage";
 
 const RouterContainer = () => {
   return (
     <main>
       <Switch>
         <PrivateRoute exact path="/private" component={PrivateScreen} />
-        <Route exact path="/" component={HomeScreen} />
+        <Route exact path="/user" component={UsersPage} />
         <Route exact path="/products/:id" component={ProductScreen} />
         <Route exact path="/products" component={VideoGamesScreen} />
         <Route exact path="/login" component={LoginScreen} />
