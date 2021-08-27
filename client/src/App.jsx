@@ -6,17 +6,19 @@ import Backdrop from "./components/features/Backdrop/Backdrop";
 import SideDrawer from "./components/features/SideDrawer/SideDrawer";
 import Footer from "./components/features/Footer/Footer";
 
-import Container from "./components/pages/Container";
+import Container from "./components/pages/RouterContainer";
+import LandingPage from "./components/pages/LandingPage";
 
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
   return (
     <Router>
       <>
-        <Navbar click={() => setSideToggle(true)} />
+        <LandingPage />
+        {/* <Navbar click={() => setSideToggle(true)} />
         <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
         <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
-        <Container />
+        <Container /> */}
         <Footer />
       </>
     </Router>

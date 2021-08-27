@@ -11,7 +11,7 @@ import ProductScreen from "../screens/Productscreen";
 import PrivateScreen from "../screens/auth/PrivateScreen";
 import PrivateRoute from "../routing/PrivateRoute";
 
-const Container = () => {
+const RouterContainer = () => {
   return (
     <main>
       <Switch>
@@ -33,4 +33,4 @@ const Container = () => {
   );
 };
 
-export default Container;
+export default RouterContainer;
