@@ -1,6 +1,9 @@
 import React from "react";
 import Header from "../features/LandingPage/Header/Header";
-import LandingPageBody from "../features/LandingPage/LandingPageBody/LandingPageBody";
+import ClassicSection from "../features/LandingPage/ClassicSection/ClassicSection";
+import Products from "../features/LandingPage/Products/Products";
+import Blog from "../features/LandingPage/Blog/Blog";
+import OurPartners from "../features/LandingPage/OurPartners/OurPartners";
 // import "../features/LandingPage/LandingPage.css";
 
 const LandingPage = () => {
@@ -8,7 +11,10 @@ const LandingPage = () => {
     <>
       <>
         <Header />
-        <LandingPageBody />
+        <ClassicSection />
+        <Products />
+        <Blog />
+        <OurPartners />
       </>
     </>
   );

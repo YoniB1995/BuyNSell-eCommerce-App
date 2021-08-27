@@ -1,7 +1,7 @@
 import React from "react";
 import "../LandingPage.css";
 
-const LandingPageBody = () => {
+const ClassicSection = () => {
   return (
     <>
       <section id="summer-collection">
@@ -27,4 +27,4 @@ const LandingPageBody = () => {
   );
 };
 
-export default LandingPageBody;
+export default ClassicSection;

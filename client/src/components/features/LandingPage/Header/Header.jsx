@@ -20,7 +20,7 @@ const Header = () => {
               Biggest eCommerce Shop in the World! Buy & Sell.
             </p>
             <h1>
-              Welcome to Buy<span class="logo-style">N</span>Sell unique store
+              Welcome to Buy<span class="logo-style">N</span>Sell store
             </h1>
             <p class="description">
               Lorem Ipsum is simply dummy text of the printing and typesetting
