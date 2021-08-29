@@ -6,7 +6,7 @@ import RegisterScreen from "../screens/auth/register/RegisterScreen";
 import ForgotPassScreen from "../screens/auth/ForgotPassScreen";
 import ResetPassScreen from "../screens/auth/ResetPassScreen";
 import CartScreen from "../screens/Cartscreen";
-import HomeScreen from "../screens/Homescreen";
+// import HomeScreen from "../screens/Homescreen";
 import ProductScreen from "../screens/Productscreen";
 import PrivateScreen from "../screens/auth/PrivateScreen";
 import PrivateRoute from "../routing/PrivateRoute";
