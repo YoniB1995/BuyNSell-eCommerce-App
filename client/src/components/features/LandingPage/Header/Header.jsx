@@ -1,14 +1,23 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Backdrop from "../../Backdrop/Backdrop";
 import "../LandingPage.css";
 import Navbar from "../Navbar/Navbar";
+import LandingSideDrawer from "../SideDrawer/LandingSideDrawer";
 
 const Header = () => {
+  const [sideToggle, setSideToggle] = useState(false);
+
   return (
     <>
       {" "}
       <header>
-        <Navbar />
+        <Navbar click={() => setSideToggle(true)} />
+        <LandingSideDrawer
+          show={sideToggle}
+          click={() => setSideToggle(false)}
+        />
+        <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
 
         <div id="header-hero">
           <div class="header-bg">
@@ -27,8 +36,14 @@ const Header = () => {
               industry.Lorem Ipsum is simply dummy text of the printing and
               typesetting industry.
             </p>
+
             <div class="button">
-              <p>shop now</p>
+              <Link
+                to="/user"
+                style={{ textDecoration: "none", color: "#f4f4f4" }}
+              >
+                <p>shop now</p>
+              </Link>
             </div>
           </div>
         </div>
