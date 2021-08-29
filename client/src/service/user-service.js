@@ -1,15 +1,14 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
+import axios from 'axios'
+
 const API =
   process.env.NODE_ENV === "production"
     ? `https://buynsell-ecommerce-app.herokuapp.com/`
-    : "http://localhost:5000";
+    : "http://localhost:3000";
 
-const registerUser = async (userData) => {
+export const registerUser = async (userData) => {
 
     const config = {
     method: "POST",
-    body: JSON.stringify(userData),
     headers: { "Content-Type": "application/json" },
   };
 
@@ -23,10 +22,7 @@ const registerUser = async (userData) => {
     
 
     } catch (error) {
-      setError(error.response.data.error);
-      setTimeout(() => {
-        setError("");
-      }, 5000);
+      console.log(error);
     }
   };
 
@@ -58,9 +54,3 @@ const resetPassUser = async (articleData) => {
 };
 
 
-
-module.exports = {
-  registerUser,
-  LoginUser,
-  resetPassUser,
-};
