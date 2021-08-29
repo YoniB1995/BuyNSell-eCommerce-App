@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-         "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true npm install && cd client && npm run build ",
+         "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true npm install --prefix client && npm run build --prefix client",
     "setup": "npm install ",
     "start": "node server/server.js",
     "server": "nodemon server/server.js ",
