@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { registerUser } from "../../../../service/user-service";
 // import "./authScreen.css";
 
 const RegisterScreen = ({ history }) => {
@@ -19,12 +20,6 @@ const RegisterScreen = ({ history }) => {
   const registerHandler = async (e) => {
     e.preventDefault();
 
-    const config = {
-      header: {
-        "Content-Type": "application/json",
-      },
-    };
-
     if (password !== confirmPassword) {
       setPassword("");
       setConfirmPassword("");
@@ -33,21 +28,14 @@ const RegisterScreen = ({ history }) => {
       }, 5000);
       return setError("Passwords do not match");
     }
-    try {
-      const { data } = await axios.post(
-        "./userauth/register",
-        { username, email, password },
-        config
-      );
-      localStorage.setItem("authToken", data.token);
 
-      history.push("/");
-    } catch (error) {
-      setError(error.response.data.error);
-      setTimeout(() => {
-        setError("");
-      }, 5000);
-    }
+    const userData = {
+      username: username,
+      email: email,
+      password: password,
+    };
+    await registerUser(userData);
+    history.push("/");
   };
 
   return (
