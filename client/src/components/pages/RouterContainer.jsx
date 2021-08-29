@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import VideoGamesScreen from "../screens/VideoGamesScreen";
 import LoginScreen from "../screens/auth/LoginScreen";
-import RegisterScreen from "../screens/auth/RegisterScreen";
+import RegisterScreen from "../screens/auth/register/RegisterScreen";
 import ForgotPassScreen from "../screens/auth/ForgotPassScreen";
 import ResetPassScreen from "../screens/auth/ResetPassScreen";
 import CartScreen from "../screens/Cartscreen";

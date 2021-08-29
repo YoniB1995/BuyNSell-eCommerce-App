@@ -22,13 +22,19 @@ const Blog = () => {
               />{" "}
             </div>
             <div class="blog-1-content">
-              <h4>Lorem Ipsum</h4>
-              <h3>Lorem ipsum dolor sit amet.</h3>
+              <h4>Josh Mathews</h4>
+              <h3>VP Of Tech-Buyers Israel Inc.</h3>
               <p class="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam.
+                Iv'e Enjoyed the service that the company provided me , alot of
+                experience and good communication. great partnership!
               </p>
+              <div>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
               <p class="button">view post</p>
             </div>
           </div>
@@ -41,13 +47,21 @@ const Blog = () => {
               />{" "}
             </div>
             <div class="blog-2-content">
-              <h4>Lorem Ipsum</h4>
-              <h3>Lorem ipsum dolor sit amet.</h3>
+              <h4>Kevin Sam</h4>
+              <h3>FullStack Team Leader at Apple</h3>
               <p class="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam.
+                Yoni is a great partner, always listens to our problems and is
+                very motivated to succeed. I Love the service and the methods
+                that the website provides. helps my team alot and i can sell my
+                products with no problem!
               </p>
+              <div>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half"></i>
+              </div>
               <p class="button">view post</p>
             </div>
           </div>

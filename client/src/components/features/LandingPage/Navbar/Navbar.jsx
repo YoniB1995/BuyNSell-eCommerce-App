@@ -15,13 +15,13 @@ export default function Navbar({ click }) {
       </NavBarLogo>
       <NavBarLinks>
         <li>
-          <Link to="/cart" className="cart__link">
+          <Link to="/register" className="cart__link">
             <i class="fas fa-user-plus"></i>
             <span>Register</span>
           </Link>
         </li>
         <li>
-          <Link to="/product/:id">LogIn</Link>
+          <Link to="/login">LogIn</Link>
         </li>
         <li>
           <Link to="/">Home</Link>

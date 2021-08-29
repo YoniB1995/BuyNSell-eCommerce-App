@@ -8,10 +8,7 @@ const Products = () => {
       <div class="container">
         <div class="products-header">
           <h2>on demand products</h2>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
-          </p>
+          <p>take a look at the top sellers at our shop at every category!</p>
         </div>
         <div class="product product-1">
           <figure>
