@@ -4,11 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "setup": "npm install && cd client && npm install && cd ..",
+         "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "setup": "npm install ",
     "start": "node server/server.js",
     "server": "nodemon server/server.js ",
-    "client": "cd client && npm run start",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "client": "cd client && npm start",
     "data:import": "node server/apiScripts.js"
   },
   "keywords": [],
