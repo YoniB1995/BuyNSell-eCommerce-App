@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import VideoGamesScreen from "../screens/VideoGamesScreen";
+import VideoGamesScreen from "../screens/VideoGamesScreen";
 import LoginScreen from "../screens/auth/LoginScreen";
 import RegisterScreen from "../screens/auth/register/RegisterScreen";
 import ForgotPassScreen from "../screens/auth/ForgotPassScreen";
@@ -21,7 +21,7 @@ const RouterContainer = () => {
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/user" component={UsersPage} />
         <Route exact path="/products/:id" component={ProductScreen} />
-        {/* <Route exact path="/products" component={VideoGamesScreen} /> */}
+        <Route exact path="/products" component={VideoGamesScreen} />
         <Route exact path="/login" component={LoginScreen} />
         <Route exact path="/register" component={RegisterScreen} />
         <Route exact path="/forgotpass" component={ForgotPassScreen} />
