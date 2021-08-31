@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API =
+export const API =
   process.env.NODE_ENV === "production"
     ? `https://buynsell-ecommerce-app.herokuapp.com/`
     : "http://localhost:3000";
@@ -25,26 +25,43 @@ export const registerUser = async (userData) => {
     }
   };
 
-
-export const LoginUser = async (userData) => {
+  const loginUser = (user) => {
   const options = {
     method: "POST",
-    body: JSON.stringify(userData),
+    body: JSON.stringify(user),
     headers: { "Content-Type": "application/json" },
   };
   try {
-    const { data } = await axios.post(
-        "./user/register",
-        userData,
-        options
-      );
-
-    localStorage.setItem("authToken", data.token);
-
+    return fetch(`${API}/user/login`, options)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+      });
   } catch (error) {
     console.log(error);
   }
 };
+
+// export const LoginUser = async (userData) => {
+//   const options = {
+//     method: "POST",
+//     body: JSON.stringify(userData),
+//     headers: { "Content-Type": "application/json" },
+//   };
+//   try {
+//     const { data } = await axios.post(
+//         "./user/register",
+//         userData,
+//         options
+//       );
+
+
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
 export const resetPassUser = async (articleData) => {
   const options = {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import "../auth/register/RegisterScreen.css";
+import { API } from "../../../service/user-service";
 
 import { faUser, faMailBulk, faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,6 +11,7 @@ const LoginScreen = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [user, setUser] = useState("");
 
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
@@ -21,19 +22,17 @@ const LoginScreen = ({ history }) => {
   const loginHandler = async (e) => {
     e.preventDefault();
 
-    const config = {
-      header: {
-        "Content-Type": "application/json",
-      },
+    const options = {
+      method: "POST",
+      body: JSON.stringify({ email: email, password: password }),
+      headers: { "Content-Type": "application/json" },
     };
 
     try {
-      const { data } = await axios.post(
-        "/auth/login",
-        { email, password },
-        config
-      );
-      localStorage.setItem("authToken", data.token);
+      await fetch(`${API}/user/login`, options)
+        .then((res) => res.json())
+        .then((data) => setUser(data));
+      localStorage.setItem("authToken", user.token);
 
       history.push("/");
     } catch (error) {
