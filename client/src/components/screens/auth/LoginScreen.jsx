@@ -29,12 +29,13 @@ const LoginScreen = ({ history }) => {
     };
 
     try {
-      await fetch(`${API}/user/login`, options)
-        .then((res) => res.json())
-        .then((data) => setUser(data));
+      await fetch(`${API}/user/login`, options).then((res) =>
+        setUser(res.json())
+      );
+
       localStorage.setItem("authToken", user.token);
 
-      history.push("/");
+      history.push(`/user/${user._id}`);
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {

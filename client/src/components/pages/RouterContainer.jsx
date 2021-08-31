@@ -20,7 +20,7 @@ const RouterContainer = () => {
       <Switch>
         <PrivateRoute exact path="/private" component={PrivateScreen} />
         <Route exact path="/" component={LandingPage} />
-        <Route exact path="/user" component={UsersPage} />
+        <Route exact path="/user/:id" component={UsersPage} />
         <Route exact path="/products/:id" component={ProductScreen} />
         <Route exact path="/products" component={VideoGamesScreen} />
         <Route exact path="/login" component={LoginScreen} />
