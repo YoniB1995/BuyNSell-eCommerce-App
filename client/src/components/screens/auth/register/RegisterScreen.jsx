@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import { registerUser } from "../../../../service/user-service";
-// import "./authScreen.css";
+import "./RegisterScreen.css";
+
+import { faUser, faMailBulk, faLock } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button } from "@material-ui/core";
 
 const RegisterScreen = ({ history }) => {
   const [username, setUsername] = useState("");
@@ -44,52 +47,68 @@ const RegisterScreen = ({ history }) => {
         <form onSubmit={registerHandler} className="register-screen__form">
           <h3 className="register-screen__title">Register</h3>
           {error && <span className="error-message">{error}</span>}
-          <label htmlFor="name">Username:</label>
-          <input
-            type="text"
-            required
-            id="name"
-            placeholder="Enter username:"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
+          <span>
+            <FontAwesomeIcon icon={faUser} />
+            <input
+              type="text"
+              required
+              id="name"
+              placeholder="Enter username:"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </span>
 
-          <label htmlFor="name">Email:</label>
-          <input
-            type="email"
-            required
-            id="email"
-            placeholder="Enter Email:"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          <span>
+            <FontAwesomeIcon icon={faMailBulk} />{" "}
+            <input
+              type="email"
+              required
+              id="email"
+              placeholder="Enter Email:"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </span>
 
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            required
-            id="password"
-            placeholder="Enter password:"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <span>
+            <FontAwesomeIcon icon={faLock} />
+            <input
+              type="password"
+              required
+              id="password"
+              placeholder="Enter password:"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </span>
 
-          <label htmlFor="confirmpassword">Confirm Password:</label>
-          <input
-            type="password"
-            required
-            id="confirmpassword"
-            placeholder="Confirm password:"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
+          <span>
+            <FontAwesomeIcon icon={faLock} />
+            <input
+              type="password"
+              required
+              id="confirmpassword"
+              placeholder="Confirm password:"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </span>
 
-          <button type="submit" className="btn btn-primary">
+          <Button variant="contained" type="submit" className="btn btn-primary">
             Register
-          </button>
+          </Button>
 
           <span className="register-screen__subtext">
-            Already have an account? <Link to="/login">Login</Link>
+            Already have an account?{" "}
+            <Link
+              to="/login"
+              style={{ textDecoration: "none", color: "#f4f4f4" }}
+            >
+              <Button variant="contained" color="primary">
+                Login
+              </Button>
+            </Link>
           </span>
         </form>
       </div>

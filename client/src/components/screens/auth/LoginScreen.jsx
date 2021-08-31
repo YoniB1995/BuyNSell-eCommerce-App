@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "./authScreen.css";
+import "../auth/register/RegisterScreen.css";
+
+import { faUser, faMailBulk, faLock } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button } from "@material-ui/core";
 
 const LoginScreen = ({ history }) => {
   const [email, setEmail] = useState("");
@@ -46,8 +50,8 @@ const LoginScreen = ({ history }) => {
         <h3 className="login-screen__title">Login</h3>
         {error && <span className="error-message">{error}</span>}
 
-        <div className="form-group">
-          <label htmlFor="name">Email:</label>
+        <span>
+          <FontAwesomeIcon icon={faMailBulk} />
           <input
             type="email"
             required
@@ -57,18 +61,10 @@ const LoginScreen = ({ history }) => {
             onChange={(e) => setEmail(e.target.value)}
             tabIndex={1}
           />
-        </div>
+        </span>
 
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <Link
-            to="/forgotpass"
-            className="login-screen__forgotpassword"
-            tabIndex={4}
-          >
-            {" "}
-            Forgot Password?
-          </Link>
+        <span>
+          <FontAwesomeIcon icon={faLock} />
           <input
             type="password"
             required
@@ -78,12 +74,28 @@ const LoginScreen = ({ history }) => {
             onChange={(e) => setPassword(e.target.value)}
             tabIndex={2}
           />
+        </span>
+        <div className="button-login-forgot">
+          <Button type="submit" variant="contained" className="btn btn-login">
+            Login
+          </Button>
+          <Button
+            type="submit"
+            variant="secondary"
+            className="btn btn-login"
+            tabIndex={3}
+          >
+            <Link
+              to="/forgotpass"
+              className="login-screen__forgotpassword"
+              tabIndex={4}
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              {" "}
+              Forgot Password?
+            </Link>
+          </Button>
         </div>
-
-        <button type="submit" className="btn btn-primary" tabIndex={3}>
-          Login
-        </button>
-
         <span className="login-screen__subtext">
           Don't have an account? <Link to="/register">Register</Link>
         </span>

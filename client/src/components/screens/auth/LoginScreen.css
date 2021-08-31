@@ -46,7 +46,8 @@
   margin: 0.5rem 0;
 }
 
-.register-screen {
+.register-screen,
+.login-screen {
   background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 100vh;
@@ -55,6 +56,17 @@
   align-items: center;
 }
 
+.button-login-forgot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div .btn-login {
+  width: 100%;
+  margin-bottom: 10px;
+}
 .register-screen__form {
   width: 380px;
   padding: 1.5rem;

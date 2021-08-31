@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "./authScreen.css";
+import "./LoginScreen.css";
 
 const ResetPasswordScreen = ({ history, match }) => {
   const [password, setPassword] = useState("");

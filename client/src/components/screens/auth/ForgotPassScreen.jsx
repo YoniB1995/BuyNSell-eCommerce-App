@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import "./authScreen.css";
+import "../auth/register/RegisterScreen.css";
 
 const ForgotPasswordScreen = () => {
   const [email, setEmail] = useState("");
@@ -34,7 +35,7 @@ const ForgotPasswordScreen = () => {
   };
 
   return (
-    <div className="forgotpassword-screen">
+    <div className="register-screen">
       <form
         onSubmit={forgotPasswordHandler}
         className="forgotpassword-screen__form"
@@ -57,8 +58,14 @@ const ForgotPasswordScreen = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-login">
           Send Email
+        </button>
+
+        <button type="button" className="btn btn-login">
+          <Link to="/" style={{ textDecoration: "none", color: "#141414" }}>
+            to Home
+          </Link>
         </button>
       </form>
     </div>

@@ -12,6 +12,7 @@ import PrivateScreen from "../screens/auth/PrivateScreen";
 import PrivateRoute from "../routing/PrivateRoute";
 import UsersPage from "./UsersPage";
 import LandingPage from "./LandingPage";
+import NotFoundPage from "./NotFoundPage";
 
 const RouterContainer = () => {
   return (
@@ -31,6 +32,7 @@ const RouterContainer = () => {
           component={ResetPassScreen}
         />
         <Route exact path="/cart" component={CartScreen} />
+        <Route exact path="*" component={NotFoundPage} />
       </Switch>
     </main>
   );
