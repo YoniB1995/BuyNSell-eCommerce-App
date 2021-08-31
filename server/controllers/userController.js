@@ -51,7 +51,7 @@ const UserLogIn = async (req, res, next) => {
       return next(new ErrorResponse('Wrong Password !', 401));
     }
     user.password = '****';
-    let userToken = genToken(user.id);
+    let userToken = genToken(user._id);
     // localStorage.setItem({ token: userToken });
     res.json({ token: userToken, user });
     next();
