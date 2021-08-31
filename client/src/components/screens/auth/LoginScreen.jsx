@@ -11,7 +11,7 @@ const LoginScreen = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [user, setUser] = useState("");
+  const [details, setDetails] = useState("");
 
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
@@ -30,12 +30,11 @@ const LoginScreen = ({ history }) => {
 
     try {
       await fetch(`${API}/user/login`, options).then((res) =>
-        setUser(res.json())
+        setDetails(res.json())
       );
+      localStorage.setItem("authToken", details.token);
 
-      localStorage.setItem("authToken", user.token);
-
-      history.push(`/user/${user._id}`);
+      history.push(`/user/${details.user._id}`);
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {

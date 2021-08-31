@@ -53,7 +53,7 @@ const UserLogIn = async (req, res, next) => {
     user.password = '****';
     let userToken = genToken(user._id);
     // localStorage.setItem({ token: userToken });
-    res.json({ token: userToken, user });
+    res.json({ token: userToken, user});
     next();
   } catch (error) {
     console.log(error);
