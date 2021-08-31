@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const API =
   process.env.NODE_ENV === "production"
-    ? `https://buynsell-ecommerce-app.herokuapp.com/`
+    ? `https://buynsell-ecommerce-app.herokuapp.com`
     : "http://localhost:3000";
 
 export const registerUser = async (userData) => {
