@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000
 
 const cors = require('cors');
 const productRoutes = require('./routes/productRoutes');
-const userAuth = require('./routes/auth');
+const userRouter = require('./routes/userRouter');
 const privateAuth = require('./routes/private')
 
 app.use(express.json()); // JSON יכולת לקרוא ולהציג מידע מ
@@ -22,7 +22,7 @@ connectDB.on('error',()=>{
 
 
 app.use('/products',productRoutes)
-app.use('/userauth',userAuth)
+app.use('/user',userRouter)
 app.use('/api/private',privateAuth)
 
 // Error Handler 
