@@ -18,7 +18,6 @@ export const registerUser = async (userData) => {
         userData,
         config
       );
-    localStorage.setItem("authToken", data.token);
     
 
     } catch (error) {
@@ -27,20 +26,27 @@ export const registerUser = async (userData) => {
   };
 
 
-const LoginUser = async (articleData) => {
+export const LoginUser = async (userData) => {
   const options = {
     method: "POST",
-    body: JSON.stringify(articleData),
+    body: JSON.stringify(userData),
     headers: { "Content-Type": "application/json" },
   };
   try {
-    await fetch(`${API}/articles/new`, options);
+    const { data } = await axios.post(
+        "./user/register",
+        userData,
+        options
+      );
+
+    localStorage.setItem("authToken", data.token);
+
   } catch (error) {
     console.log(error);
   }
 };
 
-const resetPassUser = async (articleData) => {
+export const resetPassUser = async (articleData) => {
   const options = {
     method: "PUT",
     body: JSON.stringify(articleData),

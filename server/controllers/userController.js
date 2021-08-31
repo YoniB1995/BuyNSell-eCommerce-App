@@ -28,7 +28,7 @@ const getTokenAndConfig = async (req, res) => {
   }
 };
 
-const userLogIn = async (req, res, next) => {
+const UserLogIn = async (req, res, next) => {
   try {
     const validBody = validUser(req.body);
     if (validBody.error) {
@@ -87,10 +87,9 @@ const registerUser = async (req, res, next) => {
     await bcrypt.genSalt(10, (err, salt) => {
       bcrypt.hash(req.body.password, salt, (error, hash) => {
         if (error) throw error;
-        req.body.password = hash;
+        // req.body.password = hash;
         userModel.create(req.body, (err, result) => {
           if (err) throw err;
-          result.password = '*********';
           res.json(result);
         });
       });
@@ -197,7 +196,7 @@ module.exports = {
   getUserById,
   registerUser,
   deleteUser,
-  userLogIn,
+  UserLogIn,
   getTokenAndConfig,
   resetPassword,
   forgotPassword

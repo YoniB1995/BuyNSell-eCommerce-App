@@ -4,7 +4,7 @@ const userModel = require('../models/userModel');
 
 exports.validUser = (userData) => {
   const joiSchema = joi.object({
-    password: joi.string().min(2).max(99).required(),
+    password: joi.string().min(5).max(99).required(),
     email: joi.string().min(4).max(99).required()
       .email(),
   });
