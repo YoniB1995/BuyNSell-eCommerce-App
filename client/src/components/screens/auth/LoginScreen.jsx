@@ -34,12 +34,12 @@ const LoginScreen = ({ history }) => {
       );
       localStorage.setItem("authToken", details.token);
 
-      history.push(`/user/${details.user._id}`);
+      history.push(`/user/${details._id}`);
     } catch (error) {
-      setError(error.response.data.error);
-      setTimeout(() => {
-        setError("");
-      }, 5000);
+      console.log(error);
+      //       setTimeout(() => {
+      //   setError("");
+      // }, 5000);
     }
   };
 
