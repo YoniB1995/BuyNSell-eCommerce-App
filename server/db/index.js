@@ -1,4 +1,5 @@
 require('dotenv').config();
+const {importData} = require('../apiScripts')
 const mongoose = require('mongoose')
 const MONGO_URL = process.env.MONGO_URL
 const MONGO_LOCAL_URL = process.env.MONGO_LOCAL_URL
@@ -12,7 +13,9 @@ const connectDB = async () => {
         });
 }
 connectDB().then(()=>{
-    console.log('MongoDB Atlas Connected')
+    console.log('MongoDB Atlas Connected');
+    // importData();
+
 }).catch((err)=>{
     console.log(`Error Message - ${err.message}`)
 })

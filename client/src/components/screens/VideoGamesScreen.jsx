@@ -1,16 +1,25 @@
 import styled from "styled-components";
 import Products from "../features/Products/Products";
 import "./Homescreen.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import Navbar from "../features/Navbar/NavbarNew";
+import Backdrop from "../features/Backdrop/Backdrop";
+import SideDrawer from "../features/SideDrawer/SideDrawer";
+import Footer from "../features/Footer/Footer";
 
 const VideoGamesScreen = () => {
+  const [sideToggle, setSideToggle] = useState(false);
+
   const dispatch = useDispatch();
 
   const getProducts = useSelector((state) => state.getProducts);
   const { products, loading, error } = getProducts;
   return (
     <>
+      <Navbar click={() => setSideToggle(true)} />
+      <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
+      <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <HomeScreenTitle>Latest Products</HomeScreenTitle>
 
       <HomeScreenProducts className="homescreen__products">
@@ -31,6 +40,7 @@ const VideoGamesScreen = () => {
           ))
         )}
       </HomeScreenProducts>
+      <Footer />
     </>
   );
 };

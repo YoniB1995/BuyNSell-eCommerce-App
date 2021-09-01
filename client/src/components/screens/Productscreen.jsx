@@ -1,11 +1,17 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Navbar from "../features/Navbar/NavbarNew";
+import Backdrop from "../features/Backdrop/Backdrop";
+import SideDrawer from "../features/SideDrawer/SideDrawer";
+import Footer from "../features/Footer/Footer";
 
 import { getProductsDetails } from "../../redux/actions/productActions";
 import { addToCart } from "../../redux/actions/cartActions";
 
 const ProductScreen = ({ match, history }) => {
+  const [sideToggle, setSideToggle] = useState(false);
+
   const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
 
@@ -18,56 +24,62 @@ const ProductScreen = ({ match, history }) => {
     }
   }, [dispatch, product, match]);
   return (
-    <ProductScreenBody>
-      {loading ? (
-        <h2>Loading...</h2>
-      ) : error ? (
-        <h2>{error}</h2>
-      ) : (
-        <>
-          <ProductScreenLeft>
-            <LeftImage>
-              <img src={product.imageUrl} alt={product.name} />
-            </LeftImage>
-            <LeftInfo>
-              <LeftName>{product.name}</LeftName>
-              <p>Price: ${product.price}</p>
-              <p>Description: ${product.description}</p>
-            </LeftInfo>
-          </ProductScreenLeft>
-          <ProductScreenRight>
-            <RightInfo>
-              <p>
-                Price: <span>${product.price}</span>
-              </p>
-              <p>
-                Status:{" "}
-                <span>
-                  {product.countInStock > 0 ? "In Stock" : "Out of Stock"}
-                </span>
-              </p>
-              <p>
-                Qty
-                <select value={qty} onChange={(e) => setQty(e.target.value)}>
-                  {[...Array(product.countInStock).keys()].map((x) => (
-                    <option key={x + 1} value={x + 1}>
-                      {x + 1}
-                    </option>
-                  ))}
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-              </p>
-              <p>
-                <button type="button">Add To Cat</button>
-              </p>
-            </RightInfo>
-          </ProductScreenRight>
-        </>
-      )}
-    </ProductScreenBody>
+    <>
+      <Navbar click={() => setSideToggle(true)} />
+      <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
+      <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
+      <ProductScreenBody>
+        {loading ? (
+          <h2>Loading...</h2>
+        ) : error ? (
+          <h2>{error}</h2>
+        ) : (
+          <>
+            <ProductScreenLeft>
+              <LeftImage>
+                <img src={product.imageUrl} alt={product.name} />
+              </LeftImage>
+              <LeftInfo>
+                <LeftName>{product.name}</LeftName>
+                <p>Price: ${product.price}</p>
+                <p>Description: ${product.description}</p>
+              </LeftInfo>
+            </ProductScreenLeft>
+            <ProductScreenRight>
+              <RightInfo>
+                <p>
+                  Price: <span>${product.price}</span>
+                </p>
+                <p>
+                  Status:{" "}
+                  <span>
+                    {product.countInStock > 0 ? "In Stock" : "Out of Stock"}
+                  </span>
+                </p>
+                <p>
+                  Qty
+                  <select value={qty} onChange={(e) => setQty(e.target.value)}>
+                    {[...Array(product.countInStock).keys()].map((x) => (
+                      <option key={x + 1} value={x + 1}>
+                        {x + 1}
+                      </option>
+                    ))}
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </p>
+                <p>
+                  <button type="button">Add To Cat</button>
+                </p>
+              </RightInfo>
+            </ProductScreenRight>
+          </>
+        )}
+      </ProductScreenBody>
+      <Footer />
+    </>
   );
 };
 

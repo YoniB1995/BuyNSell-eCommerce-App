@@ -22,19 +22,19 @@ const HomeScreen = () => {
       <ProductsFlex>
         <ProductBody>
           <h2>Screens</h2>
-          <Link to={`/screens/product`} className="info_button_body">
+          <Link to={`/home/screens`} className="info_button_body">
             <img src="../../images/screens_background.jpg" alt="" srcset="" />
           </Link>
         </ProductBody>
         <ProductBody>
           <h2>Gaming</h2>
-          <Link to={`/videogames/product`} className="info_button_body">
+          <Link to={`/home/videogames`} className="info_button_body">
             <img src="../../images/gaming_background.jpeg" alt="" srcset="" />
           </Link>
         </ProductBody>
         <ProductBody>
           <h2>Shoes</h2>
-          <Link to={`/product/${1111}`} className="info_button_body">
+          <Link to={`/shoes/products`} className="info_button_body">
             <img src="../../images/shoes_background.jpeg" alt="" srcset="" />
           </Link>
         </ProductBody>

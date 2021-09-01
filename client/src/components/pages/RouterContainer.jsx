@@ -13,6 +13,7 @@ import PrivateRoute from "../routing/PrivateRoute";
 import UsersPage from "./UsersPage";
 import LandingPage from "./LandingPage";
 import NotFoundPage from "./NotFoundPage";
+import HomeScreen from "../screens/Homescreen";
 
 const RouterContainer = () => {
   return (
@@ -21,8 +22,9 @@ const RouterContainer = () => {
         <PrivateRoute exact path="/private" component={PrivateScreen} />
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/user/:id" component={UsersPage} />
-        <Route exact path="/products/:id" component={ProductScreen} />
-        <Route exact path="/products" component={VideoGamesScreen} />
+        <Route exact path="/home" component={UsersPage} />
+        <Route exact path="/home/screens" component={ProductScreen} />
+        <Route exact path="/home/videogames" component={VideoGamesScreen} />
         <Route exact path="/login" component={LoginScreen} />
         <Route exact path="/register" component={RegisterScreen} />
         <Route exact path="/forgotpass" component={ForgotPassScreen} />

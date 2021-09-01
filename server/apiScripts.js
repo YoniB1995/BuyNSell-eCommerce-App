@@ -2,9 +2,12 @@ require('dotenv').config();
 const connectDB= require('./db');
 
 const productsData = require('./data/products');
+const screenData = require('./data/screens');
+const shoesData = require('./data/shoes');
 
-const product = require('./models/product');
-const screen = require('./models/screen');
+const product = require('./models/productModel');
+const screen = require('./models/screenModel');
+const shoes = require('./models/shoesModel');
 
 
 const importData = async () => {
@@ -13,6 +16,10 @@ const importData = async () => {
     await product.insertMany(productsData);
 
     await screen.deleteMany({});
+    await screen.insertMany(screenData);
+
+    await shoes.deleteMany({});
+    await shoes.insertMany(shoesData);
 
 
     console.log("data import success")
@@ -25,4 +32,4 @@ const importData = async () => {
     }
 }
 
-importData();
+// module.exports = importData();
