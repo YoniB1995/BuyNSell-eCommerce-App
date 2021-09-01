@@ -1,25 +1,25 @@
 require('dotenv').config();
 const connectDB= require('./db');
 
-const productsData = require('./data/products');
+const gamesData = require('./data/games');
 const screenData = require('./data/screens');
 const shoesData = require('./data/shoes');
 
 const product = require('./models/productModel');
 const screen = require('./models/screenModel');
 const shoes = require('./models/shoesModel');
-
+const game = require('./models/gameModel')
 
 const importData = async () => {
     try{
-    await product.deleteMany({});
-    await product.insertMany(productsData);
+    // await game.deleteMany({});
+    // await game.insertMany(gamesData);
 
-    await screen.deleteMany({});
-    await screen.insertMany(screenData);
+    // await screen.deleteMany({});
+    // await screen.insertMany(screenData);
 
-    await shoes.deleteMany({});
-    await shoes.insertMany(shoesData);
+    // await shoes.deleteMany({});
+    // await shoes.insertMany(shoesData);
 
 
     console.log("data import success")

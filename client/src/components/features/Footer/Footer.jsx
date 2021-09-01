@@ -8,9 +8,6 @@ const Footer = () => {
     <>
       <FooterBody>
         <FooterGridColumn>
-          <Link to="/">Home</Link>
-        </FooterGridColumn>
-        <FooterGridColumn>
           <h4>Get to know us</h4>
           <p>Careers</p>
           <p>Blogs</p>
@@ -52,7 +49,7 @@ const FooterBody = styled.div`
   background-color: #232f3e;
   color: #f4f4f4;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 
   @media (max-width: 965px) {
     display: flex;

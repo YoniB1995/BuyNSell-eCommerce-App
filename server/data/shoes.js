@@ -161,12 +161,12 @@ const shoes = [
   },
   {
     id:17,
-    name: "2021 Newest Acer Aspire 5 15.6" ,
+    name: "Nike Air Jordan 1 Mid" ,
     imageUrl:
-      "https://m.media-amazon.com/images/I/51P0aFGxPnL._AC_.jpg",
+      "https://cdn.kickscrew.com/media/catalog/product/cache/dd3ae58018643bb67b4bf8f0a77873b1/5/5/554724-074_Nike_Air_Jordan_1_Mid_Banned_Black_b.jpg",
     description:
-      "[Display]- 15.6 inches Full HD (1920 x 1080) Widescreen LED backlit IPS Display; AMD Radeon Vega 3 Mobile Graphics.\n [Processor] AMD Ryzen 3 3350U (2.60 GHz, up to 3.50 GHz with Turbo Boost, 4 MB Cache, 2 Cores ), 3-cell lithium-ion, up to 6 hours battery life mixed-use",
-    price: 999,
+      "Firstly arrived in 1985, Air Jordan 1 has been around for over 3 decades. The Jordan line keeps revamping the OG silhouettes with fresh colours and premium materials, and has also collaborated with different artists, designers and retailers to capture the essence of the original through a modern lens.",
+    price: 145,
     countInStock: 43,
   },
   {

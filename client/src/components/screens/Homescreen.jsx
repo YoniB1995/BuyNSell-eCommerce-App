@@ -28,7 +28,7 @@ const HomeScreen = () => {
         </ProductBody>
         <ProductBody>
           <h2>Gaming</h2>
-          <Link to={`/home/videogames`} className="info_button_body">
+          <Link to={`/home/games`} className="info_button_body">
             <img src="../../images/gaming_background.jpeg" alt="" srcset="" />
           </Link>
         </ProductBody>

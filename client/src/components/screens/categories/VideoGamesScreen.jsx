@@ -7,15 +7,15 @@ import Navbar from "../../features/Navbar/NavbarNew";
 import Backdrop from "../../features/Backdrop/Backdrop";
 import SideDrawer from "../../features/SideDrawer/SideDrawer";
 import Footer from "../../features/Footer/Footer";
-import { getProducts as listProducts } from "../../../redux/actions/productActions";
+import { getAllGames as listProducts } from "../../../redux/actions/productActions";
 
 const VideoGamesScreen = () => {
   const [sideToggle, setSideToggle] = useState(false);
 
   const dispatch = useDispatch();
 
-  const getProducts = useSelector((state) => state.getProducts);
-  const { products, loading, error } = getProducts;
+  const getAllGames = useSelector((state) => state.getAllGames);
+  const { products, loading, error } = getAllGames;
 
   useEffect(() => {
     dispatch(listProducts());

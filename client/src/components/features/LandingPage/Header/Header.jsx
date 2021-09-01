@@ -11,18 +11,17 @@ const Header = () => {
   return (
     <>
       {" "}
+      <Navbar click={() => setSideToggle(true)} />
+      <LandingSideDrawer show={sideToggle} click={() => setSideToggle(false)} />
+      <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <header>
-        <Navbar click={() => setSideToggle(true)} />
-        <LandingSideDrawer
-          show={sideToggle}
-          click={() => setSideToggle(false)}
-        />
-        <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
-
         <div id="header-hero">
           <div class="header-bg">
             {" "}
-            <img src="./images/FirstLandingImg.jpg" alt="header-image" />{" "}
+            <img
+              src="https://images.unsplash.com/3/www.madebyvadim.com.jpg?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=761&q=80"
+              alt="header-image"
+            />{" "}
           </div>
           <div class="header-content">
             <p class="heading-1">
@@ -39,7 +38,7 @@ const Header = () => {
 
             <div class="button">
               <Link
-                to="/user"
+                to="/home"
                 style={{ textDecoration: "none", color: "#f4f4f4" }}
               >
                 <p>shop now</p>

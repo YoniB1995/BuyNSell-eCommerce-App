@@ -1,5 +1,6 @@
 const shoe = require('../models/shoesModel')
 const screen = require('../models/screenModel')
+const game = require('../models/gameModel')
 
 const getAllShoes = async (req,res) =>{
     try{
@@ -45,11 +46,35 @@ const getScreenById = async (req,res) =>{
     }
 }
 
+const getAllGames = async (req,res) =>{
+    try{
+        const games = await game.find({});
+
+        res.json(games);
+    } catch(error){
+        console.log(error);
+        res.status(500).json({message:"Server Error"});
+    }
+}
+
+const getGameById = async (req,res) =>{
+    try{
+        const gameId = await game.findById(req.params.id);
+
+        res.json(gameId);
+    } catch(error){
+        console.log(error);
+        res.status(500).json({message:"Server Error"});
+    }
+}
+
 module.exports = {
     getAllShoes,
     getShoeById,
     getAllScreens,
-    getScreenById
+    getScreenById,
+    getAllGames,
+    getGameById
 
 
 }

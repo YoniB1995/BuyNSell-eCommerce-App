@@ -24,7 +24,7 @@ const RouterContainer = () => {
         <Route exact path="/user/:id" component={UsersPage} />
         <Route exact path="/home" component={UsersPage} />
         <Route exact path="/home/screens" component={ScreensScreen} />
-        <Route exact path="/home/videogames" component={VideoGamesScreen} />
+        <Route exact path="/home/games" component={VideoGamesScreen} />
         <Route exact path="/home/shoes" component={ShoesScreen} />
         <Route exact path="/login" component={LoginScreen} />
         <Route exact path="/register" component={RegisterScreen} />
