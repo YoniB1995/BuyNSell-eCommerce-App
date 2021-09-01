@@ -2,21 +2,21 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getProductsDetails } from "../../redux/actions/productActions";
-import { addToCart } from "../../redux/actions/cartActions";
+import { getShoesDetails } from "../../../redux/actions/productActions";
+import { addToCart } from "../../../redux/actions/cartActions";
 
-const ProductScreen = ({ match, history }) => {
+const ShoesProduct = ({ match, history }) => {
   const [sideToggle, setSideToggle] = useState(false);
 
   const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
 
-  const productDetails = useSelector((state) => state.getProductsDetails);
+  const productDetails = useSelector((state) => state.getShoesDetails);
   const { loading, error, product } = productDetails;
 
   useEffect(() => {
     if (product && match.params.id !== product._id) {
-      dispatch(getProductsDetails(match.params.id));
+      dispatch(getShoesDetails(match.params.id));
     }
   }, [dispatch, product, match]);
   return (
@@ -75,7 +75,7 @@ const ProductScreen = ({ match, history }) => {
   );
 };
 
-export default ProductScreen;
+export default ShoesProduct;
 
 const ProductScreenBody = styled.div`
   max-width: 1300px;

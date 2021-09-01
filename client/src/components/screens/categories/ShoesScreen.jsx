@@ -1,20 +1,20 @@
 import styled from "styled-components";
-import Products from "../features/Products/Products";
-import "./Homescreen.css";
+import Products from "../../features/Products/Products";
+import "../Homescreen.css";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Navbar from "../features/Navbar/NavbarNew";
-import Backdrop from "../features/Backdrop/Backdrop";
-import SideDrawer from "../features/SideDrawer/SideDrawer";
-import Footer from "../features/Footer/Footer";
+import Navbar from "../../features/Navbar/NavbarNew";
+import Backdrop from "../../features/Backdrop/Backdrop";
+import SideDrawer from "../../features/SideDrawer/SideDrawer";
+import Footer from "../../features/Footer/Footer";
 
-const VideoGamesScreen = () => {
+const ShoesScreen = () => {
   const [sideToggle, setSideToggle] = useState(false);
 
   const dispatch = useDispatch();
 
-  const getProducts = useSelector((state) => state.getProducts);
-  const { products, loading, error } = getProducts;
+  const getAllShoes = useSelector((state) => state.getAllShoes);
+  const { products, loading, error } = getAllShoes;
   return (
     <>
       <Navbar click={() => setSideToggle(true)} />
@@ -45,7 +45,7 @@ const VideoGamesScreen = () => {
   );
 };
 
-export default VideoGamesScreen;
+export default ShoesScreen;
 
 const HomeScreenBody = styled.div`
   max-width: 1300px;

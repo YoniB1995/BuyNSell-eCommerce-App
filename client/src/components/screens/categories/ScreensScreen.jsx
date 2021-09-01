@@ -1,20 +1,20 @@
 import styled from "styled-components";
-import Products from "../features/Products/Products";
-import "./Homescreen.css";
+import Products from "../../features/Products/Products";
+import "../Homescreen.css";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Navbar from "../features/Navbar/NavbarNew";
-import Backdrop from "../features/Backdrop/Backdrop";
-import SideDrawer from "../features/SideDrawer/SideDrawer";
-import Footer from "../features/Footer/Footer";
+import Navbar from "../../features/Navbar/NavbarNew";
+import Backdrop from "../../features/Backdrop/Backdrop";
+import SideDrawer from "../../features/SideDrawer/SideDrawer";
+import Footer from "../../features/Footer/Footer";
 
 const ScreensScreen = () => {
   const [sideToggle, setSideToggle] = useState(false);
 
   const dispatch = useDispatch();
 
-  const getProducts = useSelector((state) => state.getProducts);
-  const { products, loading, error } = getProducts;
+  const getAllScreens = useSelector((state) => state.getAllScreens);
+  const { products, loading, error } = getAllScreens;
   return (
     <>
       <Navbar click={() => setSideToggle(true)} />

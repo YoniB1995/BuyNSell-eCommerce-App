@@ -1,21 +1,44 @@
-const product = require('../models/shoesModel')
+const shoe = require('../models/shoesModel')
+const screen = require('../models/screenModel')
 
-const getAllProducts = async (req,res) =>{
+const getAllShoes = async (req,res) =>{
     try{
-        const products = await product.find({});
+        const shoes = await shoe.find({});
 
-        res.json(products);
+        res.json(shoes);
     } catch(error){
         console.log(error);
         res.status(500).json({message:"Server Error"});
     }
 }
 
-const getProductById = async (req,res) =>{
+const getShoeById = async (req,res) =>{
     try{
-        const productId = await product.findById(req.params.id);
+        const shoeId = await shoe.findById(req.params.id);
 
-        res.json(productId);
+        res.json(shoeId);
+    } catch(error){
+        console.log(error);
+        res.status(500).json({message:"Server Error"});
+    }
+}
+
+const getAllScreens = async (req,res) =>{
+    try{
+        const screens = await screen.find({});
+
+        res.json(screens);
+    } catch(error){
+        console.log(error);
+        res.status(500).json({message:"Server Error"});
+    }
+}
+
+const getScreenById = async (req,res) =>{
+    try{
+        const screenId = await screen.findById(req.params.id);
+
+        res.json(screenId);
     } catch(error){
         console.log(error);
         res.status(500).json({message:"Server Error"});
@@ -23,6 +46,10 @@ const getProductById = async (req,res) =>{
 }
 
 module.exports = {
-    getAllProducts,
-    getProductById
+    getAllShoes,
+    getShoeById,
+    getAllScreens,
+    getScreenById
+
+
 }
