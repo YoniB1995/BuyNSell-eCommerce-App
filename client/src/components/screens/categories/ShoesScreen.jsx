@@ -7,6 +7,7 @@ import Navbar from "../../features/Navbar/NavbarNew";
 import Backdrop from "../../features/Backdrop/Backdrop";
 import SideDrawer from "../../features/SideDrawer/SideDrawer";
 import Footer from "../../features/Footer/Footer";
+import { getAllShoes as listProducts } from "../../../redux/actions/productActions";
 
 const ShoesScreen = () => {
   const [sideToggle, setSideToggle] = useState(false);
@@ -15,6 +16,10 @@ const ShoesScreen = () => {
 
   const getAllShoes = useSelector((state) => state.getAllShoes);
   const { products, loading, error } = getAllShoes;
+
+  useEffect(() => {
+    dispatch(listProducts());
+  }, [dispatch]);
   return (
     <>
       <Navbar click={() => setSideToggle(true)} />

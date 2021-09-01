@@ -7,6 +7,7 @@ import Navbar from "../../features/Navbar/NavbarNew";
 import Backdrop from "../../features/Backdrop/Backdrop";
 import SideDrawer from "../../features/SideDrawer/SideDrawer";
 import Footer from "../../features/Footer/Footer";
+import { getAllScreens as listProducts } from "../../../redux/actions/productActions";
 
 const ScreensScreen = () => {
   const [sideToggle, setSideToggle] = useState(false);
@@ -15,6 +16,10 @@ const ScreensScreen = () => {
 
   const getAllScreens = useSelector((state) => state.getAllScreens);
   const { products, loading, error } = getAllScreens;
+
+  useEffect(() => {
+    dispatch(listProducts());
+  }, [dispatch]);
   return (
     <>
       <Navbar click={() => setSideToggle(true)} />

@@ -6,8 +6,6 @@ import { getShoesDetails } from "../../../redux/actions/productActions";
 import { addToCart } from "../../../redux/actions/cartActions";
 
 const ShoesProduct = ({ match, history }) => {
-  const [sideToggle, setSideToggle] = useState(false);
-
   const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
 
