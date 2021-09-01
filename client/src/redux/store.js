@@ -7,6 +7,7 @@ import {getProductsDetails,getProductsReducer} from './reducers/productReducers'
 
 const reducer = combineReducers({
     cart: cartReducer,
+    getProducts: getProductsReducer,
     getAllShoes: getProductsReducer,
     getAllScreens: getProductsReducer,
     getShoesDetails: getProductsDetails,
