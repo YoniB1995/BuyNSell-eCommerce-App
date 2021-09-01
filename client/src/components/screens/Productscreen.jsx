@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Navbar from "../features/Navbar/NavbarNew";
-import Backdrop from "../features/Backdrop/Backdrop";
-import SideDrawer from "../features/SideDrawer/SideDrawer";
-import Footer from "../features/Footer/Footer";
 
 import { getProductsDetails } from "../../redux/actions/productActions";
 import { addToCart } from "../../redux/actions/cartActions";
@@ -25,9 +21,6 @@ const ProductScreen = ({ match, history }) => {
   }, [dispatch, product, match]);
   return (
     <>
-      <Navbar click={() => setSideToggle(true)} />
-      <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
-      <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <ProductScreenBody>
         {loading ? (
           <h2>Loading...</h2>
@@ -78,7 +71,6 @@ const ProductScreen = ({ match, history }) => {
           </>
         )}
       </ProductScreenBody>
-      <Footer />
     </>
   );
 };

@@ -34,13 +34,13 @@ const HomeScreen = () => {
         </ProductBody>
         <ProductBody>
           <h2>Shoes</h2>
-          <Link to={`/shoes/products`} className="info_button_body">
+          <Link to={`/home/shoes`} className="info_button_body">
             <img src="../../images/shoes_background.jpeg" alt="" srcset="" />
           </Link>
         </ProductBody>
         <ProductBody>
           <h2>Furniture</h2>
-          <Link to={`/product/${1111}`} className="info_button_body">
+          <Link to={`/home/furniture`} className="info_button_body">
             <img
               src="../../images/furniture_background.jpeg"
               alt=""
