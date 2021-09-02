@@ -3,7 +3,14 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "./Product.css";
 
-const Products = ({ imageUrl, name, price, description, productId }) => {
+const Products = ({
+  imageUrl,
+  name,
+  price,
+  description,
+  productId,
+  typeScreen,
+}) => {
   return (
     <ProductBody>
       <img src={imageUrl} alt={name} />
@@ -12,7 +19,7 @@ const Products = ({ imageUrl, name, price, description, productId }) => {
         <InfoDesc>{description.substring(0, 100)}...</InfoDesc>
         <InfoPrice>${price}</InfoPrice>
 
-        <Link to={`/product/${productId}`} className="info__button">
+        <Link to={`${typeScreen}/${productId}`} className="info__button">
           View
         </Link>
       </ProductInfo>

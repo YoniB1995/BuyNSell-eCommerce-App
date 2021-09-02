@@ -41,6 +41,7 @@ const ShoesScreen = () => {
               price={product.price}
               description={product.description}
               imageUrl={product.imageUrl}
+              typeScreen="/home/shoes"
             />
           ))
         )}
