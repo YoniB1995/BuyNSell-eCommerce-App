@@ -26,13 +26,13 @@
 
 .sidedrawer__links > li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .sidedrawer__links > li > a {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   text-align: center;
   flex: 1;
   padding: 1rem;

@@ -9,7 +9,7 @@ const LandingSideDrawer = ({ show, click }) => {
 
   return (
     <div className={sideDrawerClass.join(" ")}>
-      <ul className="sidedrawer__links" onClick={click}>
+      <ul className="sidedrawer__links landingsidedrawer" onClick={click}>
         <li>
           <Link to="/login">
             <i class="fas fa-user-check"></i>
@@ -21,6 +21,30 @@ const LandingSideDrawer = ({ show, click }) => {
             <i className="fas fa-user-plus"></i>
             <span>Register</span>
           </Link>
+        </li>
+        <li>
+          <a href="#summer-collection">
+            <i class="fas fa-angle-double-right"></i>
+            <span>Classic</span>
+          </a>
+        </li>
+        <li>
+          <a href="#products">
+            <i class="fas fa-angle-double-right"></i>
+            <span>On Demand</span>
+          </a>
+        </li>
+        <li>
+          <a href="#blog">
+            <i class="fas fa-angle-double-right"></i>
+            <span>Our Customers</span>
+          </a>
+        </li>
+        <li>
+          <a href="#partners">
+            <i class="fas fa-angle-double-right"></i>
+            <span>Our Partners</span>
+          </a>
         </li>
         <li>
           <Link to="/">

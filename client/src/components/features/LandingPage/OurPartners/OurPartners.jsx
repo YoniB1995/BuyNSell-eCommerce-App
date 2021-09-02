@@ -6,7 +6,7 @@ const OurPartners = () => {
   return (
     <>
       <OurPartnersBody>
-        <div class="blog-header">
+        <div class="blog-header" id="partners">
           <h2>Our Partners</h2>
         </div>
         <OurPartnersFlex>

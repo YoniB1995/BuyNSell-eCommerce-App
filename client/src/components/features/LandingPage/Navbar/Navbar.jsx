@@ -45,6 +45,9 @@ const NavBody = styled.div`
   align-items: center;
   padding: 1.5rem 1rem;
   z-index: 50;
+  @media (max-width: 840px) {
+    position: fixed;
+  }
 `;
 
 const NavBarLogo = styled.div`
