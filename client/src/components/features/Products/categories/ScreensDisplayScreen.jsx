@@ -25,7 +25,7 @@ const ScreensDisplayScreen = ({ match, history }) => {
   }, [dispatch, match, product]);
 
   const addToCartHandler = () => {
-    dispatch(addToCart(product._id, qty));
+    dispatch(addToCart(product._id, qty, "screen"));
     history.push(`/cart`);
   };
 

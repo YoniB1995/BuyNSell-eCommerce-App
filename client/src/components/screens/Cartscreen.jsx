@@ -1,11 +1,17 @@
 import styled from "styled-components";
 import CartItem from "../features/CartItem/CartItem";
-import { useEffect } from "react";
+import Navbar from "../features/Navbar/NavbarNew";
+import Backdrop from "../features/Backdrop/Backdrop";
+import SideDrawer from "../features/SideDrawer/SideDrawer";
+import Footer from "../features/Footer/Footer";
+
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart, removeFromCart } from "../../redux/actions/cartActions";
 
 const CartScreen = () => {
+  const [sideToggle, setSideToggle] = useState(false);
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
@@ -32,35 +38,41 @@ const CartScreen = () => {
   };
 
   return (
-    <CartScreenBody>
-      <CartScreenLeft>
-        <h2>Shopping Cart</h2>
+    <>
+      <Navbar click={() => setSideToggle(true)} />
+      <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
+      <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
+      <CartScreenBody>
+        <CartScreenLeft>
+          <h2>Shopping Cart</h2>
 
-        {cartItems.length === 0 ? (
+          {cartItems.length === 0 ? (
+            <div>
+              Your Cart Is Empty <Link to="/">Go Back</Link>
+            </div>
+          ) : (
+            cartItems.map((item) => (
+              <CartItem
+                key={item.product}
+                item={item}
+                qtyChangeHandler={qtyChangeHandler}
+                removeHandler={removeFromCartHandler}
+              />
+            ))
+          )}
+        </CartScreenLeft>
+        <CartScreenRight>
+          <CartRightInfo>
+            <p>Subtotal ({getCartCount()}) items</p>
+            <p>${getCartSubTotal()}</p>
+          </CartRightInfo>
           <div>
-            Your Cart Is Empty <Link to="/">Go Back</Link>
+            <button className="checkoutBtn">Proceed to Checkout </button>
           </div>
-        ) : (
-          cartItems.map((item) => (
-            <CartItem
-              key={item.product}
-              item={item}
-              qtyChangeHandler={qtyChangeHandler}
-              removeHandler={removeFromCartHandler}
-            />
-          ))
-        )}
-      </CartScreenLeft>
-      <CartScreenRight>
-        <CartRightInfo>
-          <p>Subtotal ({getCartCount()}) items</p>
-          <p>${getCartSubTotal()}</p>
-        </CartRightInfo>
-        <div>
-          <button className="checkoutBtn">Proceed to Checkout </button>
-        </div>
-      </CartScreenRight>
-    </CartScreenBody>
+        </CartScreenRight>
+      </CartScreenBody>
+      <Footer />
+    </>
   );
 };
 

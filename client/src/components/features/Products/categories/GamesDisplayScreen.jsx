@@ -25,7 +25,7 @@ const GamesDisplayScreen = ({ match, history }) => {
   }, [dispatch, match, product]);
 
   const addToCartHandler = () => {
-    dispatch(addToCart(product._id, qty));
+    dispatch(addToCart(product._id, qty, "game"));
     history.push(`/cart`);
   };
 

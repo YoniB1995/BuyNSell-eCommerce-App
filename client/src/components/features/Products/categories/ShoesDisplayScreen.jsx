@@ -25,7 +25,7 @@ const ShoesDisplayScreen = ({ match, history }) => {
   }, [dispatch, match, product]);
 
   const addToCartHandler = () => {
-    dispatch(addToCart(product._id, qty));
+    dispatch(addToCart(product._id, qty, "shoe"));
     history.push(`/cart`);
   };
 

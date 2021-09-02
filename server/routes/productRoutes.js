@@ -1,6 +1,6 @@
 const express= require('express');
 const router = express.Router();
-const {getAllScreens,getAllShoes,getScreenById,getShoeById,getAllGames,getGameById } = require('../controllers/productCtrl')
+const {getAllScreens,getAllShoes,getScreenById,getShoeById,getAllGames,getGameById } = require('../controllers/productController')
 
 router.get('/screens',getAllScreens)
 router.get('/screen/:id',getScreenById)
