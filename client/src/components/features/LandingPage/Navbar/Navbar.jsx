@@ -5,9 +5,6 @@ import "../../../../App.css";
 import "../LandingPage.css";
 
 export default function Navbar({ click }) {
-  const BackToMenu = () => {
-    return <Link to="/"></Link>;
-  };
   return (
     <NavBody>
       <NavBarLogo>
@@ -24,7 +21,7 @@ export default function Navbar({ click }) {
           <Link to="/login">LogIn</Link>
         </li>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">Homepage</Link>
         </li>
       </NavBarLinks>
       <HamburgerMenu onClick={click}>

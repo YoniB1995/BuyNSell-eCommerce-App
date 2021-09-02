@@ -1,22 +1,9 @@
 import styled from "styled-components";
-import Products from "../features/Products/Products";
 import "./Homescreen.css";
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import ProductScreen from "./products/ShoesProduct";
 import { Link } from "react-router-dom";
 import "../features/Products/Product.css";
-// import { getProducts as listProducts } from "../../redux/actions/productActions";
 
 const HomeScreen = () => {
-  const dispatch = useDispatch();
-
-  const getProducts = useSelector((state) => state.getProducts);
-  // const { products, loading, error } = getProducts;
-
-  // useEffect(() => {
-  //   dispatch(listProducts());
-  // }, [dispatch]);
   return (
     <HomeScreenBody>
       <ProductsFlex>

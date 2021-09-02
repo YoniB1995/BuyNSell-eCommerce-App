@@ -67,4 +67,11 @@ const HomeScreenTitle = styled.h2`
 const HomeScreenProducts = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
+  @media only screen and (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;

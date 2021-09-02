@@ -6,8 +6,6 @@ import { getScreensDetails } from "../../../redux/actions/productActions";
 import { addToCart } from "../../../redux/actions/cartActions";
 
 const ScreensProduct = ({ match, history }) => {
-  const [sideToggle, setSideToggle] = useState(false);
-
   const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
 

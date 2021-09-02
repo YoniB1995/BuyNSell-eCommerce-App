@@ -1,11 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import "../../../App.css";
 
 export default function Navbar({ click }) {
-  const BackToMenu = () => {
-    return <Link to="/"></Link>;
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
+
+  const getCartCount = () => {
+    return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
   };
   return (
     <NavBody>
@@ -18,15 +23,15 @@ export default function Navbar({ click }) {
             <i className="fas fa-shopping-cart"></i>
             <span>
               Cart
-              <CartLogoBade>0</CartLogoBade>
+              <CartLogoBade>{getCartCount()}</CartLogoBade>
             </span>
           </Link>
         </li>
         <li>
-          <Link to="/product/:id">Shop</Link>
+          <Link to="/home">Shop</Link>
         </li>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">Homepage</Link>
         </li>
       </NavBarLinks>
       <HamburgerMenu onClick={click}>
