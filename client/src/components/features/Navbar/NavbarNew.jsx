@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import "../../../App.css";
 
-export default function Navbar({ click }) {
+export default function Navbar({ click, history }) {
+  const [name, setName] = useState("");
   const cart = useSelector((state) => state.cart);
+
   const { cartItems } = cart;
+
+  const LogOutUser = () => {
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("firstName");
+    setName(null);
+  };
+  useEffect(() => {
+    if (localStorage.getItem("firstName")) {
+      setName(localStorage.getItem("firstName").toString());
+    }
+  }, [name]);
 
   const getCartCount = () => {
     return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
@@ -15,7 +28,9 @@ export default function Navbar({ click }) {
   return (
     <NavBody>
       <NavBarLogo>
-        <h2>BuyNSell Shopping Market</h2>
+        <Link to="/" style={{ textDecoration: "none", color: "#f4f4f4" }}>
+          <h2>BuyNSell Shopping Market</h2>
+        </Link>
       </NavBarLogo>
       <NavBarLinks>
         <li>
@@ -30,9 +45,27 @@ export default function Navbar({ click }) {
         <li>
           <Link to="/home">Shop</Link>
         </li>
-        <li>
-          <Link to="/">Homepage</Link>
-        </li>
+        {name ? (
+          <>
+            <li>
+              <Link to="/home">Welcome {name}</Link>
+            </li>
+            <li>
+              <Link to="/home" onClick={LogOutUser}>
+                Logout
+              </Link>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <Link to="/home">Welcome Guest</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          </>
+        )}
       </NavBarLinks>
       <HamburgerMenu onClick={click}>
         <div></div>

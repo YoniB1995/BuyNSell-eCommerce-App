@@ -1,28 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "../../../../App.css";
 import "../LandingPage.css";
 
 export default function Navbar({ click }) {
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    if (localStorage.getItem("firstName")) {
+      setName(localStorage.getItem("firstName").toString());
+    }
+  }, []);
   return (
     <NavBody>
       <NavBarLogo>
-        <h2>BuyNSell Shopping Market</h2>
+        <Link to="/" style={{ textDecoration: "none", color: "#f4f4f4" }}>
+          <h2>BuyNSell Shopping Market</h2>
+        </Link>
       </NavBarLogo>
       <NavBarLinks>
-        <li>
-          <Link to="/register" className="cart__link">
-            <i class="fas fa-user-plus"></i>
-            <span>Register</span>
-          </Link>
-        </li>
-        <li>
-          <Link to="/login">LogIn</Link>
-        </li>
-        <li>
-          <Link to="/">Homepage</Link>
-        </li>
+        {!name ? (
+          <>
+            <li>
+              <Link to="/register" className="cart__link">
+                <i class="fas fa-user-plus"></i>
+                <span>Register</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/login">LogIn</Link>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <Link to="/home">
+                <i className="fas fa-shopping-cart"></i>Shop
+              </Link>
+            </li>
+            <li>
+              <Link to="/login">Welcome {name}</Link>
+            </li>
+          </>
+        )}
       </NavBarLinks>
       <HamburgerMenu onClick={click}>
         <div></div>

@@ -1,6 +1,7 @@
 const games = [
   {
     id:1,
+    type:"games",
     name: "Oculus Quest 2 — Advanced",
     imageUrl:
       "https://m.media-amazon.com/images/I/615YaAiA-ML._SL1500_.jpg",
@@ -11,6 +12,7 @@ const games = [
   },
   {
     id:2,
+    type:"games",
     name: "SAMSUNG HMD Odyssey+ Windows Mixed Reality ",
     imageUrl:
       "https://m.media-amazon.com/images/I/71x89-gSQVL._AC_SL1500_.jpg",
@@ -21,6 +23,7 @@ const games = [
   },
   {
     id:3,
+    type:"games",
     name: "Sony Playstation Gift Card 50$",
     imageUrl:
       "https://m.media-amazon.com/images/I/619IviEX+6S._SL1500_.jpg",
@@ -31,6 +34,7 @@ const games = [
   },
   {
     id:4,
+    type:"games",
     name: "SONY PlayStation 4 Slim 1TB Console",
     imageUrl:
       "https://m.media-amazon.com/images/I/61OL2zIliML._SL1500_.jpg",
@@ -41,6 +45,7 @@ const games = [
   },
   {
     id:5,
+    type:"games",
     name: "NBA 2K22 - PlayStation 4",
     imageUrl:
       "https://m.media-amazon.com/images/I/814IztfQ5LL._SL1500_.jpg",
@@ -51,6 +56,7 @@ const games = [
   },
   {
     id:6,
+    type:"games",
     name: "NBA 2K22 75th Anniversary Edition - PlayStation 4",
     imageUrl:
       "https://m.media-amazon.com/images/I/81TuYMuk9CL._SL1500_.jpg",
@@ -61,6 +67,7 @@ const games = [
   },
   {
     id:7,
+    type:"games",
     name: "NBA 2K22 75th Anniversary Edition - X-Box Series X ",
     imageUrl:
       "https://m.media-amazon.com/images/I/815NWDxEw1L._SL1346_.jpg",
@@ -71,6 +78,7 @@ const games = [
   },
   {
     id:8,
+    type:"games",
     name: "Xbox Series X",
     imageUrl:
       "https://m.media-amazon.com/images/I/41OH7dLwaJL._SL1280_.jpg",
@@ -81,6 +89,7 @@ const games = [
   },
   {
     id:9,
+    type:"games",
     name: "Xbox One Limited Edition Call of Duty: Advanced Warfare Bundle",
     imageUrl:
       "https://m.media-amazon.com/images/I/51NSV2JMRYL.jpg",
@@ -91,6 +100,7 @@ const games = [
   },
   {
     id:10,
+    type:"games",
     name: "Xbox One S 2TB Limited Edition Console - Gears of War 4 Bundle",
     imageUrl:
       "https://m.media-amazon.com/images/I/719g3vUqljL._SL1236_.jpg",
@@ -101,6 +111,7 @@ const games = [
   },
   {
     id:11,
+    type:"games",
     name: "Microsoft Xbox 360 Elite 120GB Console Bundle",
     imageUrl:
       "https://m.media-amazon.com/images/I/71v+76MkqiL._SL1500_.jpg",
@@ -111,6 +122,7 @@ const games = [
   },
   {
     id:12,
+    type:"games",
     name: "Madden NFL 22 - Xbox Series X",
     imageUrl:
       "https://m.media-amazon.com/images/I/61VsVZcu78S._SL1000_.jpg",
@@ -121,6 +133,7 @@ const games = [
   },
   {
     id:13,
+    type:"games",
     name: "Call of Duty: Black Ops Cold War (Xbox X)",
     imageUrl:
       "https://m.media-amazon.com/images/I/81duXjS1JvS._SL1500_.jpg",
@@ -131,6 +144,7 @@ const games = [
   },
   {
     id:14,
+    type:"games",
     name: "PlayStation 5 Console",
     imageUrl:
       "https://m.media-amazon.com/images/I/619BkvKW35L._SL1500_.jpg",
@@ -141,6 +155,7 @@ const games = [
   },
   {
     id:15,
+    type:"games",
     name: "Marvel's Spider-Man: Miles Morales",
     imageUrl:
       "https://m.media-amazon.com/images/I/71bqboqDUiL._SL1361_.jpg",
@@ -151,6 +166,7 @@ const games = [
   },
   {
     id:16,
+    type:"games",
     name: "Lost Judgment - PlayStation 5",
     imageUrl:
       "https://m.media-amazon.com/images/I/71h3Ir-lMKL._SL1476_.jpg",
@@ -161,6 +177,7 @@ const games = [
   },
   {
     id:17,
+    type:"games",
     name: "The Medium - PlayStation 5" ,
     imageUrl:
       "https://m.media-amazon.com/images/I/81s30U2xKYL._SL1476_.jpg",
@@ -171,6 +188,7 @@ const games = [
   },
   {
     id:18,
+    type:"games",
     name: "Observer: System Redux - PlayStation 5",
     imageUrl:
       "https://m.media-amazon.com/images/I/81umIJWeYaS._SL1476_.jpg",
@@ -181,6 +199,7 @@ const games = [
   },
   {
     id:19,
+    type:"games",
     name: "Dying Light 2 Stay Human (Deluxe Edition) – PlayStation 5",
     imageUrl:
       "https://m.media-amazon.com/images/I/81+NdKy+OUS._SL1500_.jpg",
@@ -191,6 +210,7 @@ const games = [
   },
   {
     id:20,
+    type:"games",
     name: "Recon 500 Wired Multiplatform Gaming Headset ",
     imageUrl:
       "https://m.media-amazon.com/images/I/81s9O8qgVvL._SL1500_.jpg",

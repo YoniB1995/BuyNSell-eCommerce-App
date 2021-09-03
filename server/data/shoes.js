@@ -1,6 +1,7 @@
 const shoes = [
   {
     id:1,
+    type:"shoes",
     name: "Air Jordan XXXV Low Black & White",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/c540a05f-1a5f-4df6-8637-087e5cb25165/air-jordan-xxxv-low-basketball-shoe-sxct2C.png",
@@ -11,6 +12,7 @@ const shoes = [
   },
   {
     id:2,
+     type:"shoes",
     name: "Air Jordan XXXV Low White ",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/a8d3b1f6-fa3a-4c5d-82e0-6265e91422bc/air-jordan-xxxv-low-basketball-shoe-sxct2C.png",
@@ -21,6 +23,7 @@ const shoes = [
   },
   {
     id:3,
+     type:"shoes",
     name: "Nike Air Force Max II",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/c734c1ca-e712-4566-8d53-03660d04325c/air-force-max-ii-basketball-shoe-ZXgnrV.png",
@@ -31,6 +34,7 @@ const shoes = [
   },
   {
     id:4,
+     type:"shoes",
     name: "Kyrie 6",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/3a25da19-3f3f-4ecd-a1d9-4ca34e2ee76b/kyrie-6-basketball-shoe-Knb8rc.png",
@@ -41,6 +45,7 @@ const shoes = [
   },
   {
     id:5,
+     type:"shoes",
     name: "Kyrie 7",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/3bcb08b9-28ac-4612-8662-3c00976c6ebf/kyrie-7-basketball-shoe-hv6LdK.png",
@@ -51,6 +56,7 @@ const shoes = [
   },
   {
     id:6,
+     type:"shoes",
     name: "PG 5 ",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/76eeff6c-3edc-4710-9b4b-ad3d3487485b/pg-5-basketball-shoe-tRSB6g.png",
@@ -61,6 +67,7 @@ const shoes = [
   },
   {
     id:7,
+     type:"shoes",
     name: "Jordan Crater ",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/7f044c37-dd38-4383-b36f-fafbaa2b5765/jordan-crater-shoe-p61WJx.png",
@@ -71,6 +78,7 @@ const shoes = [
   },
   {
     id:8,
+     type:"shoes",
     name: "Nike React Live",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/836a7b65-e017-4520-af4a-242735d01e76/react-live-older-shoe-fbDdR6.png",
@@ -81,6 +89,7 @@ const shoes = [
   },
   {
     id:9,
+     type:"shoes",
     name: "Nike Blazer Low '77",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/d8061109-e4d4-4bf9-856a-0b268a7444fa/blazer-low-77-shoe-57lxdx.png",
@@ -91,6 +100,7 @@ const shoes = [
   },
   {
     id:10,
+     type:"shoes",
     name: "Nike Air Max 200",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/ysahfyffq6n0bizzqisf/air-max-200-shoe-tsWJZK.png",
@@ -101,6 +111,7 @@ const shoes = [
   },
   {
     id:11,
+     type:"shoes",
     name: "Nike Zoom Mamba 3",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/cd0k7fdrad0kptbn5cvc/zoom-mamba-3-distance-spike-XPTbxzmO.png",
@@ -111,6 +122,7 @@ const shoes = [
   },
   {
     id:12,
+     type:"shoes",
     name: "Nike React Infinity Run Flyknit 2",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/5878f982-343d-46f8-8bda-84588ad7c97c/react-infinity-run-flyknit-2-running-shoes-hD0Cd2.png",
@@ -121,6 +133,7 @@ const shoes = [
   },
   {
     id:13,
+     type:"shoes",
     name: "Nike React Infinity Run Flyknit",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/34dd40d6-7572-47f1-80ac-dd88a1b6b934/react-infinity-run-flyknit-running-shoe-4jHr6L.png",
@@ -131,6 +144,7 @@ const shoes = [
   },
   {
     id:14,
+     type:"shoes",
     name: "Nike MD Runner 2",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/i1-556e01ae-b64c-4882-9330-ecf8de5d73cb/md-runner-2-shoes-PATZpBgm.png",
@@ -141,6 +155,7 @@ const shoes = [
   },
   {
     id:15,
+     type:"shoes",
     name: "Nike Space Hippie 04",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/49f8cf94-3100-425d-84f0-398cca07c6bd/space-hippie-04-shoe-jnGCxQ.png",
@@ -151,6 +166,7 @@ const shoes = [
   },
   {
     id:16,
+     type:"shoes",
     name: "Nike Air Zoom Pulse",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/49f8cf94-3100-425d-84f0-398cca07c6bd/space-hippie-04-shoe-jnGCxQ.png",
@@ -161,6 +177,7 @@ const shoes = [
   },
   {
     id:17,
+     type:"shoes",
     name: "Nike Air Jordan 1 Mid" ,
     imageUrl:
       "https://cdn.kickscrew.com/media/catalog/product/cache/dd3ae58018643bb67b4bf8f0a77873b1/5/5/554724-074_Nike_Air_Jordan_1_Mid_Banned_Black_b.jpg",
@@ -171,6 +188,7 @@ const shoes = [
   },
   {
     id:18,
+     type:"shoes",
     name: "Nike Blazer Mid '77",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/f0a93845-6a47-4ce2-993a-e33cad4dc896/blazer-mid-77-shoes-XWXpXs.png",
@@ -181,6 +199,7 @@ const shoes = [
   },
   {
     id:19,
+     type:"shoes",
     name: "Nike Air VaporMax Evo",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/f1354191-bbb7-4e5a-93b9-f118f8a5c404/air-vapormax-evo-shoe-gPhB5J.png",
@@ -191,6 +210,7 @@ const shoes = [
   },
   {
     id:20,
+     type:"shoes",
     name: "Nike Reposto",
     imageUrl:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/5d065c50-2d2e-4758-8f7c-9a156e62bdee/reposto-shoe-qt1Tgh.png",

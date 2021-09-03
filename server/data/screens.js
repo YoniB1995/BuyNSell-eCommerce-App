@@ -1,6 +1,7 @@
 const screens = [
   {
     id:1,
+     type:"screens",
     name: "iPhone 12 Pro Max",
     imageUrl:
       "https://images.unsplash.com/photo-1603921326210-6edd2d60ca68?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGlwaG9uZSUyMDEyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
@@ -11,6 +12,7 @@ const screens = [
   },
   {
     id:2,
+    type:"screens",
     name: "MacBook Pro 16' ",
     imageUrl:
       "https://www.apple.com/v/macbook-pro-13/f/images/overview/macbook_pro_16__fkgofdas6o66_large.jpg",
@@ -21,6 +23,7 @@ const screens = [
   },
   {
     id:3,
+    type:"screens",
     name: "iPhone 11",
     imageUrl:
       "https://images.unsplash.com/photo-1575695342320-d2d2d2f9b73f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjB8fGlwaG9uZSUyMDExfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
@@ -31,6 +34,7 @@ const screens = [
   },
   {
     id:4,
+    type:"screens",
     name: "Samsung Galaxy A12 64GB",
     imageUrl:
       "https://d3m9l0v76dty0.cloudfront.net/system/photos/6342524/large/c5c8efa8052646a3dd32d0b7eeed2927.jpg",
@@ -41,6 +45,7 @@ const screens = [
   },
   {
     id:5,
+    type:"screens",
     name: "Samsung A12 Case,Galaxy A12 Case,with HD Screen Protector.",
     imageUrl:
       "https://m.media-amazon.com/images/I/616jXkh0ovL._AC_SL1010_.jpg",
@@ -51,6 +56,7 @@ const screens = [
   },
   {
     id:6,
+    type:"screens",
     name: "SAMSUNG Galaxy S21 Ultra 5G ",
     imageUrl:
       "https://m.media-amazon.com/images/I/61O45C5qASL._AC_SL1000_.jpg",
@@ -61,6 +67,7 @@ const screens = [
   },
   {
     id:7,
+    type:"screens",
     name: "SAMSUNG Galaxy Z Flip 3 5G ",
     imageUrl:
       "https://m.media-amazon.com/images/I/71InZW4fuvL._AC_SL1500_.jpg",
@@ -71,6 +78,7 @@ const screens = [
   },
   {
     id:8,
+    type:"screens",
     name: "SAMSUNG Galaxy S21 Ultra 5G Factory",
     imageUrl:
       "https://m.media-amazon.com/images/I/61O45C5qASL._AC_SL1000_.jpg",
@@ -81,6 +89,7 @@ const screens = [
   },
   {
     id:9,
+    type:"screens",
     name: "Navy SAMSUNG Galaxy S20 FE 5G",
     imageUrl:
       "https://m.media-amazon.com/images/I/71RxOftVoQL._AC_SL1500_.jpg",
@@ -91,6 +100,7 @@ const screens = [
   },
   {
     id:10,
+    type:"screens",
     name: "Cloud Galaxy S21 Ultra 5G Factory",
     imageUrl:
       "https://m.media-amazon.com/images/I/712iry8nIYL._AC_SL1500_.jpg",
@@ -101,6 +111,7 @@ const screens = [
   },
   {
     id:11,
+    type:"screens",
     name: "iPhone 11 Pro",
     imageUrl:
       "https://m.media-amazon.com/images/I/710OiyvrXgS._AC_SL1500_.jpg",
@@ -111,6 +122,7 @@ const screens = [
   },
   {
     id:12,
+    type:"screens",
     name: "Apple iPhone X 64GB Silver",
     imageUrl:
       "https://m.media-amazon.com/images/I/61pjImQoRyL._AC_SL1500_.jpg",
@@ -121,6 +133,7 @@ const screens = [
   },
   {
     id:13,
+    type:"screens",
     name: "Microsoft Surface Pro 7 – 12.3",
     imageUrl:
       "https://m.media-amazon.com/images/I/71kBlSKi3eL._AC_SL1500_.jpg",
@@ -131,6 +144,7 @@ const screens = [
   },
   {
     id:14,
+    type:"screens",
     name: "Microsoft Surface Book 3 (SNK-00001)",
     imageUrl:
       "https://m.media-amazon.com/images/I/51IGcAb2aFL._AC_SL1253_.jpg",
@@ -141,6 +155,7 @@ const screens = [
   },
   {
     id:15,
+    type:"screens",
     name: "Acer Predator Helios 300 PH315-54-760S Gaming Laptop",
     imageUrl:
       "https://m.media-amazon.com/images/I/719Hcr4vHPS._AC_SL1500_.jpg",
@@ -151,6 +166,7 @@ const screens = [
   },
   {
     id:16,
+    type:"screens",
     name: "Acer Nitro 5 AN517-54-77KG Gaming Laptop",
     imageUrl:
       "https://m.media-amazon.com/images/I/81WvbTbx22S._AC_SL1500_.jpg",
@@ -161,6 +177,7 @@ const screens = [
   },
   {
     id:17,
+    type:"screens",
     name: "2021 Newest Acer Aspire 5 15.6" ,
     imageUrl:
       "https://m.media-amazon.com/images/I/51P0aFGxPnL._AC_.jpg",
@@ -171,6 +188,7 @@ const screens = [
   },
   {
     id:18,
+    type:"screens",
     name: "Lenovo IdeaPad 3 15.6' Laptop",
     imageUrl:
       "https://m.media-amazon.com/images/I/61d+9L5LZMS._AC_SL1060_.jpg",
@@ -181,6 +199,7 @@ const screens = [
   },
   {
     id:19,
+    type:"screens",
     name: "2021 Newest HP 14 HD Laptop Light-Weight",
     imageUrl:
       "https://m.media-amazon.com/images/I/81NvTUBf9ZS._AC_SL1500_.jpg",
@@ -191,6 +210,7 @@ const screens = [
   },
   {
     id:20,
+    type:"screens",
     name: "2021 Dell Inspiron 15.6'Touchscreen Laptop",
     imageUrl:
       "https://m.media-amazon.com/images/I/618JrdYSvnL._AC_SL1500_.jpg",

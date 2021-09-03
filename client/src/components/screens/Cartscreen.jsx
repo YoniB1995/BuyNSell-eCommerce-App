@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import CartItem from "../features/CartItem/CartItem";
-import Navbar from "../features/Navbar/NavbarNew";
-import Backdrop from "../features/Backdrop/Backdrop";
-import SideDrawer from "../features/SideDrawer/SideDrawer";
-import Footer from "../features/Footer/Footer";
+import CartItem from "../features/cartitem/CartItem";
+import Navbar from "../features/navbar/NavbarNew";
+import Backdrop from "../features/backdrop/Backdrop";
+import SideDrawer from "../features/sidedrawer/SideDrawer";
+import Footer from "../features/footer/Footer";
 
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -57,6 +57,13 @@ const CartScreen = () => {
                 item={item}
                 qtyChangeHandler={qtyChangeHandler}
                 removeHandler={removeFromCartHandler}
+                type={
+                  item.type === "screens"
+                    ? "screens"
+                    : item.type === "shoes"
+                    ? "shoes"
+                    : item.type === "games" && "games"
+                }
               />
             ))
           )}

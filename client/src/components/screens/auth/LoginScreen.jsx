@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../auth/register/RegisterScreen.css";
 import { API } from "../../../service/user-service";
+import GoogleLogin from "react-google-login";
+import FacebookLogin from "react-facebook-login";
 
 import { faUser, faMailBulk, faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,9 +15,24 @@ const LoginScreen = ({ history }) => {
   const [error, setError] = useState("");
   const [details, setDetails] = useState("");
 
+  const LoggedToGoogle = (response) => {
+    localStorage.setItem("authToken", response.accessToken);
+    localStorage.setItem("firstName", response.profileObj.name);
+    history.push("/home");
+  };
+
+  const FailedToLog = () => {
+    alert("Login Failed! Try again");
+    history.push("/");
+  };
+
+  const responseFacebook = (response) => {
+    console.log(response);
+  };
+
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
-      history.push("/");
+      history.push("/home");
     }
   }, [history]);
 
@@ -37,9 +54,6 @@ const LoginScreen = ({ history }) => {
       history.push(`/user/${details._id}`);
     } catch (error) {
       console.log(error);
-      //       setTimeout(() => {
-      //   setError("");
-      // }, 5000);
     }
   };
 
@@ -98,6 +112,27 @@ const LoginScreen = ({ history }) => {
         <span className="login-screen__subtext">
           Don't have an account? <Link to="/register">Register</Link>
         </span>
+
+        <div className="social-button">
+          <GoogleLogin
+            clientId="231310203274-goc5kpj2lug42hvv51sc1f35lhk70bne.apps.googleusercontent.com"
+            buttonText="Login"
+            onSuccess={LoggedToGoogle}
+            onFailure={FailedToLog}
+            cookiePolicy={"single_host_origin"}
+          />
+
+          <FacebookLogin
+            appId="1088597931155576"
+            autoLoad
+            callback={responseFacebook}
+            render={(renderProps) => (
+              <button onClick={renderProps.onClick} className="facebook-btn">
+                This is my custom FB button
+              </button>
+            )}
+          />
+        </div>
       </form>
     </div>
   );
