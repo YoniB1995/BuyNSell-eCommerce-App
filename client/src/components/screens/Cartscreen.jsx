@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import CartItem from "../features/cartitem/CartItem";
-import Navbar from "../features/navbar/NavbarNew";
-import Backdrop from "../features/backdrop/Backdrop";
-import SideDrawer from "../features/sidedrawer/SideDrawer";
-import Footer from "../features/footer/Footer";
+import CartItem from "../features/CartItem/CartItem";
+import Navbar from "../features/Navbar/NavbarNew";
+import Backdrop from "../features/BackDrop/Backdrop";
+import SideDrawer from "../features/SideDrawer/SideDrawer";
+import Footer from "../features/Footer/Footer";
 
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
