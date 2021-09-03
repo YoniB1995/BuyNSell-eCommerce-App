@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Backdrop from "../../BackDrop/Backdrop";
+import Backdrop from "../../Backdrop/Backdrop";
 import "../LandingPage.css";
 import Navbar from "../Navbar/Navbar";
 import LandingSideDrawer from "../SideDrawer/LandingSideDrawer";

@@ -4,7 +4,7 @@ import "../Homescreen.css";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../../features/Navbar/NavbarNew";
-import Backdrop from "../../features/BackDrop/Backdrop";
+import Backdrop from "../../features/Backdrop/Backdrop";
 import SideDrawer from "../../features/SideDrawer/SideDrawer";
 import Footer from "../../features/Footer/Footer";
 import { getAllScreens as listProducts } from "../../../redux/actions/productActions";

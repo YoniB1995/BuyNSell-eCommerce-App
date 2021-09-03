@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import Navbar from "../../Navbar/NavbarNew";
-import Backdrop from "../../BackDrop/Backdrop";
+import Backdrop from "../../Backdrop/Backdrop";
 import SideDrawer from "../../SideDrawer/SideDrawer";
 import Footer from "../../Footer/Footer";
 

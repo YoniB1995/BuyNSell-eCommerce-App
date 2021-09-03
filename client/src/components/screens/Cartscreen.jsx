@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import CartItem from "../features/CartItem/CartItem";
 import Navbar from "../features/Navbar/NavbarNew";
-import Backdrop from "../features/BackDrop/Backdrop";
+import Backdrop from "../features/Backdrop/Backdrop";
 import SideDrawer from "../features/SideDrawer/SideDrawer";
 import Footer from "../features/Footer/Footer";
 
