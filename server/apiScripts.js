@@ -12,19 +12,19 @@ const game = require('./models/gameModel')
 
 const importData = async () => {
     try{
-    await game.deleteMany({});
-    await game.insertMany(gamesData);
+    // await game.deleteMany({});
+    // await game.insertMany(gamesData);
 
-    await screen.deleteMany({});
-    await screen.insertMany(screenData);
+    // await screen.deleteMany({});
+    // await screen.insertMany(screenData);
 
-    await shoes.deleteMany({});
-    await shoes.insertMany(shoesData);
+    // await shoes.deleteMany({});
+    // await shoes.insertMany(shoesData);
 
 
-    console.log("data import success")
+    // console.log("data import success")
 
-    process.exit();
+    // process.exit();
     }
     catch(error){
         console.error("Error with data import")
@@ -32,4 +32,4 @@ const importData = async () => {
     }
 }
 
-module.exports = importData();
+// module.exports = importData();
