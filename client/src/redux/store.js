@@ -10,9 +10,15 @@ const reducer = combineReducers({
     getAllShoes: getProductsReducer,
     getAllScreens: getProductsReducer,
     getAllGames: getProductsReducer,
+    getAllBags: getProductsReducer,
+    getAllWatches: getProductsReducer,
+    getAllBlazers: getProductsReducer,
     getShoesDetails: getProductsDetails,
     getScreensDetails: getProductsDetails,
-    getGameDetails: getProductsDetails
+    getGameDetails: getProductsDetails,
+    getBagDetails: getProductsDetails,
+    getWatchDetails: getProductsDetails,
+    getBlazerDetails: getProductsDetails
 })
 
 const middleware = [thunk];

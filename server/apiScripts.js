@@ -4,22 +4,28 @@ const connectDB= require('./db');
 const gamesData = require('./data/games');
 const screenData = require('./data/screens');
 const shoesData = require('./data/shoes');
+const watchesData = require('./data/watches')
+const blazersData = require('./data/blazers')
+const bagsData = require('./data/bags')
 
-const product = require('./models/productModel');
 const screen = require('./models/screenModel');
 const shoes = require('./models/shoesModel');
 const game = require('./models/gameModel')
+const watch = require('./models/watchModel');
+const blazer = require('./models/blazerModel');
+const bag = require('./models/bagModel')
 
 const importData = async () => {
     try{
-    // await game.deleteMany({});
-    // await game.insertMany(gamesData);
+    
+    // await watch.deleteMany({});
+    // await watch.insertMany(watchesData);
 
-    // await screen.deleteMany({});
-    // await screen.insertMany(screenData);
+    // await blazer.deleteMany({});
+    // await blazer.insertMany(blazersData);
 
-    // await shoes.deleteMany({});
-    // await shoes.insertMany(shoesData);
+    // await bag.deleteMany({});
+    // await bag.insertMany(bagsData);
 
 
     // console.log("data import success")

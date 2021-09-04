@@ -26,10 +26,22 @@ const HomeScreen = () => {
           </Link>
         </ProductBody>
         <ProductBody>
-          <h2>Furniture</h2>
-          <Link to={`/home/furniture`} className="info_button_body">
+          <h2>Watches</h2>
+          <Link to={`/home/watches`} className="info_button_body">
+            <img src="../../images/watches_background.jpeg" alt="" srcset="" />
+          </Link>
+        </ProductBody>
+        <ProductBody>
+          <h2>Blazers</h2>
+          <Link to={`/home/blazers`} className="info_button_body">
+            <img src="../../images/blazers_background.jpeg" alt="" srcset="" />
+          </Link>
+        </ProductBody>
+        <ProductBody>
+          <h2>Bags</h2>
+          <Link to={`/home/bags`} className="info_button_body">
             <img
-              src="../../images/furniture_background.jpeg"
+              src="../../images/louisvittion_background.jpeg"
               alt=""
               srcset=""
             />

@@ -1,6 +1,9 @@
 const shoe = require('../models/shoesModel')
 const screen = require('../models/screenModel')
 const game = require('../models/gameModel')
+const bag = require('../models/bagModel')
+const blazer = require('../models/blazerModel')
+const watch = require('../models/watchModel')
 
 const getAllShoes = async (req,res) =>{
     try{
@@ -68,13 +71,85 @@ const getGameById = async (req,res) =>{
     }
 }
 
+const getAllBags = async (req,res) =>{
+    try{
+        const bags = await bag.find({});
+
+        res.json(bags);
+    } catch(error){
+        console.log(error);
+        res.status(500).json({message:"Server Error"});
+    }
+}
+
+const getBagById = async (req,res) =>{
+    try{
+        const bagId = await bag.findById(req.params.id);
+
+        res.json(bagId);
+    } catch(error){
+        console.log(error);
+        res.status(500).json({message:"Server Error"});
+    }
+}
+
+const getAllBlazers = async (req,res) =>{
+    try{
+        const blazers = await blazer.find({});
+
+        res.json(blazers);
+    } catch(error){
+        console.log(error);
+        res.status(500).json({message:"Server Error"});
+    }
+}
+
+const getBlazerById = async (req,res) =>{
+    try{
+        const blazerId = await blazer.findById(req.params.id);
+
+        res.json(blazerId);
+    } catch(error){
+        console.log(error);
+        res.status(500).json({message:"Server Error"});
+    }
+}
+
+const getAllWatches = async (req,res) =>{
+    try{
+        const watches = await watch.find({});
+
+        res.json(watches);
+    } catch(error){
+        console.log(error);
+        res.status(500).json({message:"Server Error"});
+    }
+}
+
+const getWatchById = async (req,res) =>{
+    try{
+        const watchId = await watch.findById(req.params.id);
+
+        res.json(watchId);
+    } catch(error){
+        console.log(error);
+        res.status(500).json({message:"Server Error"});
+    }
+}
+
 module.exports = {
     getAllShoes,
     getShoeById,
     getAllScreens,
     getScreenById,
     getAllGames,
-    getGameById
+    getGameById,
+    getAllBags,
+    getBagById,
+    getAllBlazers,
+    getBlazerById,
+    getAllWatches,
+    getWatchById
 
 
 }

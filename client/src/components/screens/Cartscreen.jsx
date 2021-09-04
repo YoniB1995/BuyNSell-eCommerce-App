@@ -62,7 +62,13 @@ const CartScreen = () => {
                     ? "screens"
                     : item.type === "shoes"
                     ? "shoes"
-                    : item.type === "games" && "games"
+                    : item.type === "games"
+                    ? "games"
+                    : item.type === "bags"
+                    ? "bags"
+                    : item.type === "blazers"
+                    ? "blazers"
+                    : item.type === "watches" && "watches"
                 }
               />
             ))
