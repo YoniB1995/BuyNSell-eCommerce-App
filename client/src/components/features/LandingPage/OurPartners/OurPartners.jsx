@@ -41,20 +41,6 @@ const OurPartners = () => {
             />
           </PartnerCard>
         </OurPartnersFlex>
-        <a
-          href="#"
-          style={{
-            textDecoration: "none",
-            color: "white",
-            padding: "10px",
-            background: "#141414",
-            height: "10px",
-            width: "10px",
-            borderRadius: "10px",
-          }}
-        >
-          Back To Top
-        </a>
       </OurPartnersBody>
     </>
   );

@@ -8,6 +8,12 @@ import Backdrop from "../../features/Backdrop/Backdrop";
 import SideDrawer from "../../features/SideDrawer/SideDrawer";
 import Footer from "../../features/Footer/Footer";
 import { getAllBags as listProducts } from "../../../redux/actions/productActions";
+import {
+  HomeScreenBody,
+  HomeScreenProducts,
+  HomeScreenTitle,
+  SideBarToTop,
+} from "./StyledScreens";
 
 const BagsScreen = () => {
   const [sideToggle, setSideToggle] = useState(false);
@@ -26,7 +32,11 @@ const BagsScreen = () => {
       <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
       <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <HomeScreenTitle>Latest Products</HomeScreenTitle>
-
+      <a href="#">
+        <SideBarToTop>
+          <i class="fas fa-angle-double-up" style={{ fontSize: "30px" }}></i>
+        </SideBarToTop>
+      </a>
       <HomeScreenProducts className="homescreen__products">
         {loading ? (
           <h2>Loading...</h2>
@@ -52,27 +62,3 @@ const BagsScreen = () => {
 };
 
 export default BagsScreen;
-
-const HomeScreenBody = styled.div`
-  max-width: 1300px;
-  margin: 1rem auto;
-`;
-
-const HomeScreenTitle = styled.h2`
-  font-size: 1.5rem;
-  color: #171717;
-  margin-bottom: 1rem;
-  margin-left: 8px;
-`;
-
-const HomeScreenProducts = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  @media only screen and (max-width: 800px) {
-    grid-template-columns: 1fr;
-  }
-
-  @media only screen and (max-width: 1024px) {
-    grid-template-columns: 1fr 1fr;
-  }
-`;

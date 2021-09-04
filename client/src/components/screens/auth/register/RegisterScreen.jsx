@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { registerUser } from "../../../../service/user-service";
+import GoogleLogin from "react-google-login";
 import "./RegisterScreen.css";
 
 import { faUser, faMailBulk, faLock } from "@fortawesome/free-solid-svg-icons";
@@ -19,6 +20,16 @@ const RegisterScreen = ({ history }) => {
       history.push("/");
     }
   }, [history]);
+
+  const RegisterToGoogle = (response) => {
+    alert("User Registered, Continue to Login");
+    history.push("/login");
+  };
+
+  const FailedToRegister = () => {
+    alert("Registartion Failed! Try again");
+    history.push("/");
+  };
 
   const registerHandler = async (e) => {
     e.preventDefault();
@@ -98,6 +109,16 @@ const RegisterScreen = ({ history }) => {
           <Button variant="contained" type="submit" className="btn btn-primary">
             Register
           </Button>
+
+          <div className="social-button">
+            <GoogleLogin
+              clientId="231310203274-goc5kpj2lug42hvv51sc1f35lhk70bne.apps.googleusercontent.com"
+              buttonText="Register With Google"
+              onSuccess={RegisterToGoogle}
+              onFailure={FailedToRegister}
+              cookiePolicy={"single_host_origin"}
+            />
+          </div>
 
           <span className="register-screen__subtext">
             Already have an account?{" "}

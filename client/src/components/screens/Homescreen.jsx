@@ -2,10 +2,16 @@ import styled from "styled-components";
 import "./Homescreen.css";
 import { Link } from "react-router-dom";
 import "../features/Products/Product.css";
+import { SideBarToTop } from "./categories/StyledScreens";
 
 const HomeScreen = () => {
   return (
     <HomeScreenBody>
+      <a href="#">
+        <SideBarToTop>
+          <i class="fas fa-angle-double-up" style={{ fontSize: "30px" }}></i>
+        </SideBarToTop>
+      </a>
       <ProductsFlex>
         <ProductBody>
           <h2>Screens</h2>

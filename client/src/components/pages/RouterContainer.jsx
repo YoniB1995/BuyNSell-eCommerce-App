@@ -35,7 +35,7 @@ const RouterContainer = () => {
           path="/home/shoes/:id"
           component={product.ShoesDisplayScreen}
         />
-        <Route exact path="/home/bags" component={screen.VideoGamesScreen} />
+        <Route exact path="/home/bags" component={screen.BagsScreen} />
         <Route
           exact
           path="/home/bags/:id"

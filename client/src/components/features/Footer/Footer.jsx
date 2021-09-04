@@ -6,6 +6,12 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
+      <BackToTop>
+        <i class="fas fa-angle-double-up"></i>{" "}
+        <a href="#" style={{ textDecoration: "none", color: "#f4f4f4" }}>
+          Back To Top
+        </a>
+      </BackToTop>
       <FooterBody>
         <FooterGridColumn>
           <h4>Get to know us</h4>
@@ -44,6 +50,16 @@ const Footer = () => {
 
 export default Footer;
 
+const BackToTop = styled.div`
+  text-align: center;
+  background-color: #232f3e;
+  color: #f4f4f4;
+
+  :hover {
+    cursor: pointer;
+    opacity: 0.6;
+  }
+`;
 const FooterBody = styled.div`
   padding: 4rem;
   background-color: #232f3e;

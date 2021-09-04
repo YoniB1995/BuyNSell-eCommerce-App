@@ -14,6 +14,7 @@ export default function Navbar({ click, history }) {
   const LogOutUser = () => {
     localStorage.removeItem("authToken");
     localStorage.removeItem("firstName");
+    localStorage.removeItem("cart");
     setName(null);
   };
   useEffect(() => {
