@@ -3,13 +3,16 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "./CartItem.css";
 
-const CartItem = ({ item, qtyChangeHandler, removeHandler, type }) => {
+const CartItem = ({ item, qtyChangeHandler, removeHandler }) => {
   return (
     <CartItemBody>
       <CartItemImg>
         <img src={item.imageUrl} alt={item.name} />
       </CartItemImg>
-      <Link to={`/home/${type}/${item.product}`} className="cartItem__name">
+      <Link
+        to={`/home/${item.type}/${item.product}`}
+        className="cartItem__name"
+      >
         <p>{item.name}</p>
       </Link>
 
