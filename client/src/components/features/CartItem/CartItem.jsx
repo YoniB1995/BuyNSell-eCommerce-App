@@ -9,12 +9,7 @@ const CartItem = ({ item, qtyChangeHandler, removeHandler }) => {
       <CartItemImg>
         <img src={item.imageUrl} alt={item.name} />
       </CartItemImg>
-      <Link
-        to={`/home/${item.type}/${item.product}`}
-        className="cartItem__name"
-      >
-        <p>{item.name}</p>
-      </Link>
+      <p>{item.name}</p>
 
       <CartItemPrice>${item.price}</CartItemPrice>
 
