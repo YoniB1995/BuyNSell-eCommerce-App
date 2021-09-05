@@ -44,25 +44,6 @@ export const registerUser = async (userData) => {
   }
 };
 
-// export const LoginUser = async (userData) => {
-//   const options = {
-//     method: "POST",
-//     body: JSON.stringify(userData),
-//     headers: { "Content-Type": "application/json" },
-//   };
-//   try {
-//     const { data } = await axios.post(
-//         "./user/register",
-//         userData,
-//         options
-//       );
-
-
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
 export const resetPassUser = async (articleData) => {
   const options = {
     method: "PUT",

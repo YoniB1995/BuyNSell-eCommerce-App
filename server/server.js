@@ -11,8 +11,8 @@ const productRoutes = require('./routes/productRoutes');
 const userRouter = require('./routes/userRouter');
 const privateAuth = require('./routes/private')
 
-app.use(express.json()); // JSON יכולת לקרוא ולהציג מידע מ
-app.use(express.urlencoded({extended:true})); // params יכולת לשלוף מידע מ
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 app.use(cors());
 
 
@@ -25,11 +25,10 @@ app.use('/products',productRoutes)
 app.use('/user',userRouter)
 app.use('/api/private',privateAuth)
 
-// Error Handler 
 app.use(errorHandler)
 
 
-if (process.env.NODE_ENV === 'production'){ // NODE_ENV משתנה סביבה מובנה
+if (process.env.NODE_ENV === 'production'){ 
     app.use(express.static(path.join(__dirname,'../client/build')))
     app.get('*',(req,res)=>{
         res.sendFile(path.join(__dirname, '../client/build','index.html'))

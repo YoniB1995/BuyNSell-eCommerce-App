@@ -1,5 +1,6 @@
 require('dotenv').config();
-const connectDB= require('./db');
+// const connectDB= require('./db');
+// used for inserting api store data.
 
 const gamesData = require('./data/games');
 const screenData = require('./data/screens');

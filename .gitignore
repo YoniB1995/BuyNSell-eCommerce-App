@@ -14,6 +14,12 @@ node_modules/
 
 # misc
 .DS_Store
+bags.js.env
+blazers.js.env
+games.js.env
+screens.js.env
+shoes.js.env
+watches.js.env
 .env
 .env.local
 .env.development.local

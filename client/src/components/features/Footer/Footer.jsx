@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import React from "react";
 import FooterBottom from "./FooterBottom";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -17,28 +16,28 @@ const Footer = () => {
           <h4>Get to know us</h4>
           <p>Careers</p>
           <p>Blogs</p>
-          <p>About AmoZa</p>
+          <p>About BuyNGo</p>
           <p>Investor Relations</p>
         </FooterGridColumn>
         <FooterGridColumn>
           <h4>Make Money with Us</h4>
-          <p>Sell Products on AmoZa</p>
+          <p>Sell Products on BuyNGo</p>
           <p>Advertise your products</p>
-          <p>About AmoZa</p>
+          <p>About BuyNGo</p>
           <p>Investor Relations</p>
         </FooterGridColumn>
         <FooterGridColumn>
           <h4>Make Money with Us</h4>
-          <p>Sell Products on AmoZa</p>
+          <p>Sell Products on BuyNGo</p>
           <p>Advertise your products</p>
-          <p>About AmoZa</p>
+          <p>About BuyNGo</p>
           <p>Investor Relations</p>
         </FooterGridColumn>
         <FooterGridColumn>
           <h4>Let Us Help You</h4>
-          <p>Amazon </p>
+          <p>BuyNGo </p>
           <p>Advertise your products</p>
-          <p>About AmoZa</p>
+          <p>About BuyNGo</p>
           <p>Investor Relations</p>
         </FooterGridColumn>
         <FooterGridColumn></FooterGridColumn>

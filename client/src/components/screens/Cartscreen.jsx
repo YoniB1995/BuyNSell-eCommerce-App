@@ -9,9 +9,12 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart, removeFromCart } from "../../redux/actions/cartActions";
+import Paypal from "../features/paypal/Paypal";
 
-const CartScreen = () => {
+const CartScreen = ({ history }) => {
   const [sideToggle, setSideToggle] = useState(false);
+  const [checkout, setCheckOut] = useState(false);
+
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
@@ -58,12 +61,12 @@ const CartScreen = () => {
                 qtyChangeHandler={qtyChangeHandler}
                 removeHandler={removeFromCartHandler}
                 type={
-                  (item.type === "screens" && "screens") ||
-                  (item.type === "shoes" && "shoes") ||
-                  (item.type === "games" && "games") ||
-                  (item.type === "bags" && "bags") ||
-                  (item.type === "blazers" && "blazers") ||
-                  (item.type === "watches" && "watches")
+                  (item.type === "screens" ? "screens" : null) ||
+                  (item.type === "shoes" ? "shoes" : null) ||
+                  (item.type === "games" ? "games" : null) ||
+                  (item.type === "bags" ? "bags" : null) ||
+                  (item.type === "blazers" ? "blazers" : null) ||
+                  (item.type === "watches" ? "watches" : null)
                 }
               />
             ))
@@ -75,7 +78,20 @@ const CartScreen = () => {
             <p>${getCartSubTotal()}</p>
           </CartRightInfo>
           <div>
-            <button className="checkoutBtn">Proceed to Checkout </button>
+            <button
+              className="checkoutBtn"
+              onClick={() => {
+                if (localStorage.getItem("authToken")) {
+                  setCheckOut(true);
+                } else {
+                  alert("Error! User is not registered");
+                  history.push("/cart");
+                }
+              }}
+            >
+              Proceed to Checkout{" "}
+            </button>
+            {checkout ? <Paypal items={cartItems} /> : null}
           </div>
         </CartScreenRight>
       </CartScreenBody>
