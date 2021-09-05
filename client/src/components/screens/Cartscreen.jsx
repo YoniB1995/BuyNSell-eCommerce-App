@@ -40,6 +40,25 @@ const CartScreen = ({ history }) => {
       .toFixed(2);
   };
 
+  const getType = (type) => {
+    switch (type) {
+      case "screens":
+        return "screens";
+      case "shoes":
+        return "shoes";
+      case "games":
+        return "games";
+      case "bags":
+        return "bags";
+      case "blazers":
+        return "blazers";
+      case "watches":
+        return "watches";
+      default:
+        return null;
+    }
+  };
+
   return (
     <>
       <Navbar click={() => setSideToggle(true)} />
@@ -60,14 +79,7 @@ const CartScreen = ({ history }) => {
                 item={item}
                 qtyChangeHandler={qtyChangeHandler}
                 removeHandler={removeFromCartHandler}
-                type={
-                  (item.type === "screens" ? "screens" : null) ||
-                  (item.type === "shoes" ? "shoes" : null) ||
-                  (item.type === "games" ? "games" : null) ||
-                  (item.type === "bags" ? "bags" : null) ||
-                  (item.type === "blazers" ? "blazers" : null) ||
-                  (item.type === "watches" ? "watches" : null)
-                }
+                type={getType(item.type)}
               />
             ))
           )}

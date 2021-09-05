@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../LandingPage.css";
 
 const ClassicSection = () => {
@@ -13,7 +14,9 @@ const ClassicSection = () => {
               women , only can be found on buy&sell ecommerce stores!. want to
               sell your classic item? register and put your details!
             </p>
-            <a href="#">discover now</a>{" "}
+            <Link to="/home" style={{ textDecoration: "none", color: "black" }}>
+              discover now
+            </Link>{" "}
           </div>
           <div class="sc-media">
             <div class="sc-media-bg">
