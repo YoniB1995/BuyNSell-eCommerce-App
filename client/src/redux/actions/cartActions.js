@@ -1,9 +1,9 @@
 import * as actionTypes from '../constants/cartConstants';
 import axios from 'axios'
 
-export const addToCart = (id,qty,screenType) => async (dispatch,getState) => {
+export const addToCart = (id,qty) => async (dispatch,getState) => {
     
-    const {data} = await axios.get(`/products/${screenType}/${id}`)
+    const {data} = await axios.get(`/products/item/${id}`)
 
     dispatch({
         type: actionTypes.ADD_TO_CART,

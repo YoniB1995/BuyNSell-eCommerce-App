@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "../features/LandingPage/Header/Header";
 import ClassicSection from "../features/LandingPage/ClassicSection/ClassicSection";
-import Products from "../features/LandingPage/Products/Products";
 import Blog from "../features/LandingPage/Blog/Blog";
 import OurPartners from "../features/LandingPage/OurPartners/OurPartners";
 import { SideBarToTop } from "../screens/categories/StyledScreens";
+import ProductsLandingPage from "../features/LandingPage/Products/ProductsLandingPage";
 
 const LandingPage = () => {
   return (
@@ -17,7 +17,7 @@ const LandingPage = () => {
           </SideBarToTop>
         </a>
         <ClassicSection />
-        <Products />
+        <ProductsLandingPage />
         <Blog />
         <OurPartners />
       </>

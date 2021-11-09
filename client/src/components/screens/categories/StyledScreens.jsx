@@ -32,7 +32,7 @@ export const SideBarToTop = styled.div`
 `;
 
 export const HomeScreenBody = styled.div`
-  height: 100vh;
+  height: 100%;
 `;
 
 export const HomeScreenTitle = styled.h2`

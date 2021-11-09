@@ -2,7 +2,7 @@ import React from "react";
 import "../../../../App.css";
 import "../LandingPage.css";
 
-const Products = () => {
+const ProductsLandingPage = () => {
   return (
     <section id="products">
       <div class="container">
@@ -59,4 +59,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ProductsLandingPage;

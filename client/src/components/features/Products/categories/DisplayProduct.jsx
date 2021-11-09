@@ -19,7 +19,7 @@ const DisplayProduct = ({ match, history }) => {
   }, [dispatch, match, product]);
 
   const addToCartHandler = () => {
-    dispatch(addToCart(product._id, qty, "blazer"));
+    dispatch(addToCart(product._id, qty));
     history.push(`/cart`);
   };
 
