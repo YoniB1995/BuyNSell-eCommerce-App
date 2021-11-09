@@ -46,6 +46,11 @@ export default function Navbar({ click, history }) {
         <li>
           <Link to="/home">Shop</Link>
         </li>
+        <li>
+          <Link to="/contactus">
+            <i class="fas fa-envelope"></i> Contact Us
+          </Link>
+        </li>
         {name ? (
           <>
             <li>

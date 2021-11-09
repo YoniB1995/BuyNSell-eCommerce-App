@@ -5,6 +5,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import { HEROKU_API, DEV_API } from "../../service/api-service";
 import Navbar from "../features/Navbar/NavbarNew";
 import SideDrawer from "../features/SideDrawer/SideDrawer";
 import Backdrop from "../features/Backdrop/Backdrop";
@@ -13,11 +14,13 @@ import RegisterScreen from "../screens/auth/register/RegisterScreen";
 import CartScreen from "../screens/Cartscreen";
 import ContactUs from "../pages/ContactUs";
 import ProductsScreen from "../screens/categories/ProductsScreen";
-import ProtectedRoute from "../routing/ProtectedRoute";
+import ProtectedRoute from "./ProtectedRoute";
 import DisplayProduct from "../features/Products/categories/DisplayProduct";
+import AdminPanel from "../pages/AdminPanel";
 import * as user from "../screens/auth/auth.user";
-import * as pagesRoutes from "./pages.routes";
+import * as pagesRoutes from "../pages/pages.routes";
 import LandingSideDrawer from "../features/LandingPage/SideDrawer/LandingSideDrawer";
+import HomeScreen from "../screens/Homescreen";
 
 const RouterContainer = () => {
   const [isLogin, setIsLogin] = useState(localStorage.getItem("authToken"));
@@ -26,7 +29,7 @@ const RouterContainer = () => {
   return (
     <>
       <Navbar click={() => setSideToggle(true)} />
-      {window.location.href === "http://localhost:3000/#" ? (
+      {window.location.href === `${DEV_API}/#` ? (
         <LandingSideDrawer
           show={sideToggle}
           click={() => setSideToggle(false)}
@@ -37,15 +40,17 @@ const RouterContainer = () => {
 
       <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
 
-      <main>
+      <main style={{ background: "#f4f4f4" }}>
         <Switch>
+          <Route exact path="/" component={pagesRoutes.LandingPage} />
+          <Route exact path="/home" component={HomeScreen} />
           <ProtectedRoute exact path="/cart">
             {isLogin ? <CartScreen /> : <Redirect to="/login" />}
           </ProtectedRoute>
-          <Route exact path="/" component={pagesRoutes.LandingPage} />
+          <ProtectedRoute path="/adminpanel">
+            {isLogin ? <AdminPanel /> : <Redirect to="/" />}
+          </ProtectedRoute>
           <Route exact path="/contactus" component={ContactUs} />
-          <Route exact path="/user/:id" component={pagesRoutes.UsersPage} />
-          <Route exact path="/home" component={pagesRoutes.UsersPage} />
           <Route
             exact
             path="/home/:screens"

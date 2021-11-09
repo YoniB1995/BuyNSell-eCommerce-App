@@ -1,10 +1,10 @@
 import Products from "../../features/Products/Products";
 import "../Homescreen.css";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getProductsByType as listProducts } from "../../../redux/actions/productActions";
-// import { getAllShoes as listProducts } from "../../../redux/actions/productActions";
+
 import {
   HomeScreenBody,
   HomeScreenProducts,

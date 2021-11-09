@@ -10,6 +10,7 @@ const cors = require('cors');
 const productRoutes = require('./routes/productRoutes');
 const userRouter = require('./routes/userRouter');
 const mailRouter = require('./routes/eMailRouter')
+const contactUsRouter = require('./routes/contactUsRouter')
 const sgMail = require('@sendgrid/mail');
 
 app.use(express.json());
@@ -24,6 +25,7 @@ connectDB.on('error',()=>{
 app.use('/products',productRoutes)
 app.use('/user',userRouter)
 app.use('/mail',mailRouter)
+app.use('/contactus',contactUsRouter)
 
 app.use(errorHandler)
 

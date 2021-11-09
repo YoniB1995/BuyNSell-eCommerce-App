@@ -3,7 +3,7 @@ import axios from 'axios'
 export const API =
   process.env.NODE_ENV === "production"
     ? `https://buynsell-ecommerce-app.herokuapp.com`
-    : "http://localhost:3000";
+    : "http://localhost:5000";
 
 export const registerUser = async (userData) => {
 
@@ -56,5 +56,22 @@ export const resetPassUser = async (articleData) => {
     console.log(error);
   }
 };
+
+export const sendContactUs = async (details) => {
+  try {
+      await axios.post(`${API}/sendMail`, details);
+    } catch (error) {
+      console.log(error);
+    }
+}
+
+export const addContactUsToDB = async (details) => {
+  try {
+      await axios.post(`${API}/contactus`, details);
+    } catch (error) {
+      console.log(error);
+    }
+}
+
 
 

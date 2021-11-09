@@ -45,12 +45,13 @@ const LoginScreen = ({ history }) => {
     };
 
     try {
-      await fetch(`${API}/user/login`, options).then((res) =>
-        setDetails(res.json())
-      );
-      localStorage.setItem("authToken", details.token);
+      await fetch(`${API}/user/login`, options)
+        .then((res) => setDetails(res.json()))
+        .then((details) => setDetails(details.data));
 
-      history.push(`/user/${details._id}`);
+      localStorage.setItem("authToken", details);
+
+      history.push(`/home`);
     } catch (error) {
       console.log(error);
     }
