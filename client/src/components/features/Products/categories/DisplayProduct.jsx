@@ -2,38 +2,29 @@ import "./ProductScreen.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import Navbar from "../../Navbar/NavbarNew";
-import Backdrop from "../../Backdrop/Backdrop";
-import SideDrawer from "../../SideDrawer/SideDrawer";
-import Footer from "../../Footer/Footer";
-
-import { getShoesDetails } from "../../../../redux/actions/productActions";
+import { getProductById } from "../../../../redux/actions/productActions";
 import { addToCart } from "../../../../redux/actions/cartActions";
 
-const ShoesDisplayScreen = ({ match, history }) => {
+const DisplayProduct = ({ match, history }) => {
   const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
-  const [sideToggle, setSideToggle] = useState(false);
 
-  const getShoes = useSelector((state) => state.getShoesDetails);
-  const { loading, error, product } = getShoes;
+  const getProduct = useSelector((state) => state.getProductById);
+  const { loading, error, product } = getProduct;
 
   useEffect(() => {
     if (product && match.params.id !== product._id) {
-      dispatch(getShoesDetails(match.params.id));
+      dispatch(getProductById(match.params.id));
     }
   }, [dispatch, match, product]);
 
   const addToCartHandler = () => {
-    dispatch(addToCart(product._id, qty, "shoe"));
+    dispatch(addToCart(product._id, qty, "blazer"));
     history.push(`/cart`);
   };
 
   return (
     <>
-      <Navbar click={() => setSideToggle(true)} />
-      <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
-      <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <div className="productscreen">
         {loading ? (
           <h2>Loading...</h2>
@@ -83,9 +74,8 @@ const ShoesDisplayScreen = ({ match, history }) => {
           </>
         )}
       </div>
-      <Footer />
     </>
   );
 };
 
-export default ShoesDisplayScreen;
+export default DisplayProduct;

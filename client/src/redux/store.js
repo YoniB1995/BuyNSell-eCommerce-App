@@ -8,17 +8,8 @@ import {getProductsDetails,getProductsReducer} from './reducers/productReducers'
 const reducer = combineReducers({
     cart: cartReducer,
     getProductsByType : getProductsReducer,
-    getAllScreens: getProductsReducer,
-    getAllGames: getProductsReducer,
-    getAllBags: getProductsReducer,
-    getAllWatches: getProductsReducer,
-    getAllBlazers: getProductsReducer,
-    getShoesDetails: getProductsDetails,
-    getScreensDetails: getProductsDetails,
-    getGameDetails: getProductsDetails,
-    getBagDetails: getProductsDetails,
-    getWatchDetails: getProductsDetails,
-    getBlazerDetails: getProductsDetails
+    getProductById: getProductsDetails,
+    
 })
 
 const middleware = [thunk];
