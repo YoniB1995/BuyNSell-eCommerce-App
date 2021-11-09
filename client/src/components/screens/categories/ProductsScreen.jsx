@@ -12,15 +12,14 @@ import {
   SideBarToTop,
 } from "./StyledScreens";
 
-const ShoesScreen = () => {
-  const { shoes } = useParams();
+const ProductsScreen = ({ type }) => {
+  const category = useParams();
   const dispatch = useDispatch();
-
-  const getAllShoes = useSelector((state) => state.getProductsByType);
-  const { products, loading, error } = getAllShoes;
+  const getProducts = useSelector((state) => state.getProductsByType);
+  const { products, loading, error } = getProducts;
 
   useEffect(() => {
-    dispatch(listProducts(shoes));
+    dispatch(listProducts(category[type]));
   }, [dispatch]);
   return (
     <HomeScreenBody>
@@ -44,7 +43,7 @@ const ShoesScreen = () => {
               price={product.price}
               description={product.description}
               imageUrl={product.imageUrl}
-              typeScreen="/home/shoes"
+              typeScreen={`/home/${type}`}
             />
           ))
         )}
@@ -53,4 +52,4 @@ const ShoesScreen = () => {
   );
 };
 
-export default ShoesScreen;
+export default ProductsScreen;

@@ -12,6 +12,7 @@ import Footer from "../features/Footer/Footer";
 import RegisterScreen from "../screens/auth/register/RegisterScreen";
 import CartScreen from "../screens/Cartscreen";
 import ContactUs from "../pages/ContactUs";
+import ProductsScreen from "../screens/categories/ProductsScreen";
 import ProtectedRoute from "../routing/ProtectedRoute";
 import * as user from "../screens/auth/auth.user";
 import * as screen from "../screens/categories/screens.categories";
@@ -46,37 +47,62 @@ const RouterContainer = () => {
           <Route exact path="/contactus" component={ContactUs} />
           <Route exact path="/user/:id" component={pagesRoutes.UsersPage} />
           <Route exact path="/home" component={pagesRoutes.UsersPage} />
-          <Route exact path="/home/screens" component={screen.ScreensScreen} />
+          <Route
+            exact
+            path="/home/:screens"
+            render={() => <ProductsScreen type="screens" />}
+          />
+          <Route
+            exact
+            path="/home/:shoes"
+            render={() => <ProductsScreen type="shoes" />}
+          />
+          <Route
+            exact
+            path="/home/:games"
+            render={() => <ProductsScreen type="games" />}
+          />
+          <Route
+            exact
+            path="/home/:blazers"
+            render={() => <ProductsScreen type="blazers" />}
+          />
+          <Route
+            exact
+            path="/home/:watches"
+            render={() => <ProductsScreen type="watches" />}
+          />
+          <Route
+            exact
+            path="/home/:bags"
+            render={() => <ProductsScreen type="bags" />}
+          />
+
           <Route
             exact
             path="/home/screens/:id"
             component={product.ScreensDisplayScreen}
           />
-          <Route exact path="/home/games" component={screen.VideoGamesScreen} />
           <Route
             exact
             path="/home/games/:id"
             component={product.GamesDisplayScreen}
           />
-          <Route exact path="/home/shoes" component={screen.ShoesScreen} />
           <Route
             exact
             path="/home/shoes/:id"
             component={product.ShoesDisplayScreen}
           />
-          <Route exact path="/home/bags" component={screen.BagsScreen} />
           <Route
             exact
             path="/home/bags/:id"
             component={product.BagsDisplayScreen}
           />
-          <Route exact path="/home/blazers" component={screen.BlazersScreen} />
           <Route
             exact
             path="/home/blazers/:id"
             component={product.BlazersDisplayScreen}
           />
-          <Route exact path="/home/watches" component={screen.WatchesScreen} />
           <Route
             exact
             path="/home/watches/:id"

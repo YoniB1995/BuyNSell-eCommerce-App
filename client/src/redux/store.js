@@ -8,7 +8,6 @@ import {getProductsDetails,getProductsReducer} from './reducers/productReducers'
 const reducer = combineReducers({
     cart: cartReducer,
     getProductsByType : getProductsReducer,
-    getAllShoes: getProductsReducer,
     getAllScreens: getProductsReducer,
     getAllGames: getProductsReducer,
     getAllBags: getProductsReducer,
