@@ -4,6 +4,42 @@ const game = require('../models/gameModel')
 const bag = require('../models/bagModel')
 const blazer = require('../models/blazerModel')
 const watch = require('../models/watchModel')
+const product = require('../models/productModel')
+
+const getAllProducts = async (req,res) => {
+    try {
+        const products = await product.find({});
+        res.json(products);
+
+    } catch(err) {
+        console.log(err);
+         res.status(500).json({message:"Server Error"});
+    }
+}
+
+const getProductsByType = async (req,res) => {
+    try {
+        const productsByType = await product.find({type:req.params.type});
+        res.json(productsByType);
+
+    } catch(err) {
+        console.log(err);
+         res.status(500).json({message:"Server Error"});
+    }
+}
+
+const addNewProduct = async (req,res) => {
+    const {id,type,name,imageUrl,description,price,countInStock} = req.body;
+
+    try{
+        const newProduct = await product.insertOne({id:id,type:type,name:name,imageUrl:imageUrl,description:description,price:price,countInStock:countInStock});
+
+        res.json({status:'product added!',product:newProduct});
+    } catch(error){
+        console.log(error);
+        res.status(500).json({message:"Server Error"});
+    }
+}
 
 const getAllShoes = async (req,res) =>{
     try{
@@ -138,6 +174,9 @@ const getWatchById = async (req,res) =>{
 }
 
 module.exports = {
+    getAllProducts,
+    getProductsByType,
+    addNewProduct,
     getAllShoes,
     getShoeById,
     getAllScreens,

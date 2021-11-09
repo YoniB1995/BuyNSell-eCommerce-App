@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import {
+  HEROKU_MAIL_API,
+  LOCAL_MAIL_API,
+} from "../../../../service/api-service";
 import styled from "styled-components";
 import "../LandingPage.css";
 
 const OurPartners = () => {
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState(null);
+  const [email, setEmail] = useState(null);
+
+  const addNewsletter = async () => {
+    await axios.post(LOCAL_MAIL_API, { email: email }).then(() => {
+      email && setSent(true);
+    });
+  };
   return (
     <>
       <OurPartnersBody>
@@ -41,6 +55,27 @@ const OurPartners = () => {
             />
           </PartnerCard>
         </OurPartnersFlex>
+        <NewsLetterDiv>
+          <div class="blog-header" id="partners">
+            <h2>Newsletter</h2>
+            {!sent ? (
+              <>
+                <h4>Stay Updated and Submit your email for Daily Updates!</h4>
+                <input
+                  type="email"
+                  placeholder="Type your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  minLength={5}
+                />
+                <button onClick={addNewsletter}>Send</button>
+              </>
+            ) : (
+              <h3>Email Sent!</h3>
+            )}
+          </div>
+        </NewsLetterDiv>
       </OurPartnersBody>
     </>
   );
@@ -67,3 +102,7 @@ const OurPartnersFlex = styled.div`
 `;
 
 const PartnerCard = styled.div``;
+
+const NewsLetterDiv = styled.div`
+  padding: 5rem;
+`;

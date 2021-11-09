@@ -101,17 +101,17 @@ const registerUser = async (req, res, next) => {
 };
 
 const deleteUser = async (req, res, next) => {
-  const { username } = req.body;
   try {
-    const user = await userModel.findByIdAndDelete(
-      req.params.username === username && req.params.username,
-    );
+    const userByID = await userModel.findByIdAndDelete(req.params.id)
+    // const user = await userModel.findByIdAndDelete(
+    //   req.params.username === username && req.params.username,
+    // );
 
-    if (!user) {
+    if (!userByID) {
       return next(new ErrorResponse('there isn`t a username like this name', 301));
     }
 
-    console.log(user);
+    res.send({message:"user deleted",user:userByID})
   } catch (error) {
     console.log(error);
     return next(new ErrorResponse('Server Error !', 500));

@@ -1,26 +1,18 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import CartItem from "../features/CartItem/CartItem";
-import Navbar from "../features/Navbar/NavbarNew";
-import Backdrop from "../features/Backdrop/Backdrop";
-import SideDrawer from "../features/SideDrawer/SideDrawer";
-import Footer from "../features/Footer/Footer";
-
-import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart, removeFromCart } from "../../redux/actions/cartActions";
 import Paypal from "../features/paypal/Paypal";
 
 const CartScreen = ({ history }) => {
-  const [sideToggle, setSideToggle] = useState(false);
   const [checkout, setCheckOut] = useState(false);
 
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
-
-  useEffect(() => {}, []);
 
   const qtyChangeHandler = (id, qty) => {
     dispatch(addToCart(id, qty));
@@ -42,9 +34,6 @@ const CartScreen = ({ history }) => {
 
   return (
     <>
-      <Navbar click={() => setSideToggle(true)} />
-      <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
-      <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <CartScreenBody>
         <CartScreenLeft>
           <h2>Shopping Cart</h2>
@@ -87,7 +76,6 @@ const CartScreen = ({ history }) => {
           </div>
         </CartScreenRight>
       </CartScreenBody>
-      <Footer />
     </>
   );
 };

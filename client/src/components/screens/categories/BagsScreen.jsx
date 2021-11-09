@@ -3,10 +3,6 @@ import Products from "../../features/Products/Products";
 import "../Homescreen.css";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Navbar from "../../features/Navbar/NavbarNew";
-import Backdrop from "../../features/Backdrop/Backdrop";
-import SideDrawer from "../../features/SideDrawer/SideDrawer";
-import Footer from "../../features/Footer/Footer";
 import { getAllBags as listProducts } from "../../../redux/actions/productActions";
 import {
   HomeScreenBody,
@@ -16,8 +12,6 @@ import {
 } from "./StyledScreens";
 
 const BagsScreen = () => {
-  const [sideToggle, setSideToggle] = useState(false);
-
   const dispatch = useDispatch();
 
   const getAllBags = useSelector((state) => state.getAllBags);
@@ -27,10 +21,7 @@ const BagsScreen = () => {
     dispatch(listProducts());
   }, [dispatch]);
   return (
-    <>
-      <Navbar click={() => setSideToggle(true)} />
-      <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
-      <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
+    <HomeScreenBody>
       <HomeScreenTitle>Latest Products</HomeScreenTitle>
       <a href="#">
         <SideBarToTop>
@@ -56,8 +47,7 @@ const BagsScreen = () => {
           ))
         )}
       </HomeScreenProducts>
-      <Footer />
-    </>
+    </HomeScreenBody>
   );
 };
 

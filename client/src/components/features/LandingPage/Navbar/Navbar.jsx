@@ -31,6 +31,11 @@ export default function Navbar({ click }) {
             <li>
               <Link to="/login">LogIn</Link>
             </li>
+            <li>
+              <Link to="/contactus">
+                <i class="fas fa-envelope"></i> Contact Us
+              </Link>
+            </li>
           </>
         ) : (
           <>

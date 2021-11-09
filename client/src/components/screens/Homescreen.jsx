@@ -3,7 +3,6 @@ import "./Homescreen.css";
 import { Link } from "react-router-dom";
 import "../features/Products/Product.css";
 import { SideBarToTop } from "./categories/StyledScreens";
-import { Data } from "../features/popup/rights";
 const HomeScreen = () => {
   return (
     <HomeScreenBody>

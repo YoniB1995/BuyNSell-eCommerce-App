@@ -6,14 +6,9 @@ import Navbar from "../Navbar/Navbar";
 import LandingSideDrawer from "../SideDrawer/LandingSideDrawer";
 
 const Header = () => {
-  const [sideToggle, setSideToggle] = useState(false);
-
   return (
     <>
       {" "}
-      <Navbar click={() => setSideToggle(true)} />
-      <LandingSideDrawer show={sideToggle} click={() => setSideToggle(false)} />
-      <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <header>
         <div id="header-hero">
           <div class="header-bg">
@@ -31,9 +26,9 @@ const Header = () => {
               Welcome to Buy<span class="logo-style">N</span>Sell store
             </h1>
             <p class="description">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.Lorem Ipsum is simply dummy text of the printing and
-              typesetting industry.
+              Welcome to our exclusive new Shop ! <br /> We can let you buy all
+              the things that are going to be featured at the best sellers for
+              2021!
             </p>
 
             <div class="button">

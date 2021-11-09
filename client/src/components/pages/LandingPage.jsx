@@ -4,7 +4,6 @@ import ClassicSection from "../features/LandingPage/ClassicSection/ClassicSectio
 import Products from "../features/LandingPage/Products/Products";
 import Blog from "../features/LandingPage/Blog/Blog";
 import OurPartners from "../features/LandingPage/OurPartners/OurPartners";
-import Footer from "../features/Footer/Footer";
 import { SideBarToTop } from "../screens/categories/StyledScreens";
 
 const LandingPage = () => {
@@ -21,7 +20,6 @@ const LandingPage = () => {
         <Products />
         <Blog />
         <OurPartners />
-        <Footer />
       </>
     </>
   );

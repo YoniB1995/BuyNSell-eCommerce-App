@@ -32,8 +32,7 @@ export const SideBarToTop = styled.div`
 `;
 
 export const HomeScreenBody = styled.div`
-  max-width: 1300px;
-  margin: 1rem auto;
+  height: 100vh;
 `;
 
 export const HomeScreenTitle = styled.h2`

@@ -9,7 +9,8 @@ const PORT = process.env.PORT || 5000
 const cors = require('cors');
 const productRoutes = require('./routes/productRoutes');
 const userRouter = require('./routes/userRouter');
-const privateAuth = require('./routes/private')
+const mailRouter = require('./routes/eMailRouter')
+const sgMail = require('@sendgrid/mail');
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -20,12 +21,31 @@ connectDB.on('error',()=>{
     console.log('error')
 })
 
-
 app.use('/products',productRoutes)
 app.use('/user',userRouter)
-app.use('/api/private',privateAuth)
+app.use('/mail',mailRouter)
 
 app.use(errorHandler)
+
+sgMail.setApiKey(process.env.API_KEY_SendGrid)
+
+app.post('/sendMail',async (req,res)=> {
+    const {email, subject, text} = req.body;
+    const msg = {
+    to: email,
+    from:process.env.EMAIL_FROM,
+    subject: subject,
+    text: text
+}
+
+await sgMail.send(msg, (err,info)=> {
+    if(err) throw err;
+    console.log('Email Sent Success')
+})
+})
+
+
+
 
 
 if (process.env.NODE_ENV === 'production'){ 

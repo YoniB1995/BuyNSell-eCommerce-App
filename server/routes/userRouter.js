@@ -11,6 +11,6 @@ router.post('/forgotpassword', userController.forgotPassword);
 router.put('/resetpassword/:resetToken', userController.resetPassword);
 router.post('/', userController.registerUser); // redirect route to /login
 router.post('/login', userController.UserLogIn);
-router.delete('/:username', userController.deleteUser);
+router.delete('/username/:id', userController.deleteUser);
 
 module.exports = router;

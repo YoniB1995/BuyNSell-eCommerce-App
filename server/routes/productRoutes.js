@@ -1,26 +1,31 @@
 const express= require('express');
-const router = express.Router();
-const {getAllScreens,getAllShoes,getScreenById,getShoeById,getAllGames,getGameById,  getAllBags,getBagById,getAllBlazers,getBlazerById,getAllWatches,getWatchById } = require('../controllers/productController')
+const productRouter = express.Router();
+const {getAllScreens,getAllShoes,getScreenById,getShoeById,getAllGames,getGameById,  getAllBags,getBagById,getAllBlazers,getBlazerById,getAllWatches,getWatchById,addNewProduct,getAllProducts, getProductsByType } = require('../controllers/productController')
 
-router.get('/screens',getAllScreens)
-router.get('/screen/:id',getScreenById)
-
-router.get('/shoes',getAllShoes)
-router.get('/shoe/:id',getShoeById)
-
-router.get('/games',getAllGames)
-router.get('/game/:id',getGameById)
-
-router.get('/bags',getAllBags)
-router.get('/bag/:id',getBagById)
-
-router.get('/blazers',getAllBlazers)
-router.get('/blazer/:id',getBlazerById)
-
-router.get('/watches',getAllWatches)
-router.get('/watch/:id',getWatchById)
+productRouter.get('/',getAllProducts)
+productRouter.get('/:type',getProductsByType)
+productRouter.post('/',addNewProduct)
 
 
+productRouter.get('/screens',getAllScreens)
+productRouter.get('/screen/:id',getScreenById)
+
+productRouter.get('/shoes',getAllShoes)
+productRouter.get('/shoe/:id',getShoeById)
+
+productRouter.get('/games',getAllGames)
+productRouter.get('/game/:id',getGameById)
+
+productRouter.get('/bags',getAllBags)
+productRouter.get('/bag/:id',getBagById)
+
+productRouter.get('/blazers',getAllBlazers)
+productRouter.get('/blazer/:id',getBlazerById)
+
+productRouter.get('/watches',getAllWatches)
+productRouter.get('/watch/:id',getWatchById)
 
 
-module.exports = router;
+
+
+module.exports = productRouter;

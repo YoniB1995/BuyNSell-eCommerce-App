@@ -2,10 +2,6 @@ import Products from "../../features/Products/Products";
 import "../Homescreen.css";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Navbar from "../../features/Navbar/NavbarNew";
-import Backdrop from "../../features/Backdrop/Backdrop";
-import SideDrawer from "../../features/SideDrawer/SideDrawer";
-import Footer from "../../features/Footer/Footer";
 import { getAllBlazers as listProducts } from "../../../redux/actions/productActions";
 import {
   HomeScreenBody,
@@ -26,10 +22,7 @@ const BlazersScreen = () => {
     dispatch(listProducts());
   }, [dispatch]);
   return (
-    <>
-      <Navbar click={() => setSideToggle(true)} />
-      <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
-      <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
+    <HomeScreenBody>
       <HomeScreenTitle>Latest Products</HomeScreenTitle>
       <a href="#">
         <SideBarToTop>
@@ -55,8 +48,7 @@ const BlazersScreen = () => {
           ))
         )}
       </HomeScreenProducts>
-      <Footer />
-    </>
+    </HomeScreenBody>
   );
 };
 
