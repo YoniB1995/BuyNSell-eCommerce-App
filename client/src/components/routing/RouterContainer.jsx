@@ -40,7 +40,7 @@ const RouterContainer = () => {
 
       <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
 
-      <main style={{ background: "#f4f4f4" }}>
+      <main>
         <Switch>
           <Route exact path="/" component={pagesRoutes.LandingPage} />
           <Route exact path="/home" component={HomeScreen} />
