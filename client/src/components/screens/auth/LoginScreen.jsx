@@ -37,7 +37,6 @@ const LoginScreen = ({ history }) => {
 
   const loginHandler = async (e) => {
     e.preventDefault();
-
     const options = {
       method: "POST",
       body: JSON.stringify({ email: email, password: password }),
@@ -45,11 +44,10 @@ const LoginScreen = ({ history }) => {
     };
 
     try {
-      await fetch(`${API}/user/login`, options)
-        .then((res) => setDetails(res.json()))
-        .then((details) => setDetails(details.data));
-
-      localStorage.setItem("authToken", details);
+      await fetch(`http://localhost:5000/user/login`, options)
+        .then((res) => res.json())
+        .then((token) => localStorage.setItem("authToken", token.data));
+      localStorage.setItem("email", email);
 
       history.push(`/home`);
     } catch (error) {

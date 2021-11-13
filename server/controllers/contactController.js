@@ -27,7 +27,7 @@ const getContactById = async (req,res) =>{
 const addNewContact = async (req,res) =>{
     const {text,subject,email} = req.body
     try{
-        const addedContact = await contactUsModel.create({email:email,subject:subject,text:text});
+        const addedContact = await contactUsModel.create({email:email,subject:subject,text:text,createdAt:new Date(),isApproved:false});
 
         res.json({status:'email added!',addedContact:addedContact});
     } catch(error){

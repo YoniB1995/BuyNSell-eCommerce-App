@@ -14,7 +14,13 @@ const contactUsSchema = new mongoose.Schema({
         required:true
     } , 
     createdAt: {
-        type:  Date
+        type:  Date,
+        required:true
+            }
+    , 
+    isApproved: {
+        type:  Boolean,
+        required:true
         }
 
 })

@@ -13,13 +13,13 @@ export default function Navbar({ click, history }) {
 
   const LogOutUser = () => {
     localStorage.removeItem("authToken");
-    localStorage.removeItem("firstName");
+    localStorage.removeItem("email");
     localStorage.removeItem("cart");
     setName(null);
   };
   useEffect(() => {
-    if (localStorage.getItem("firstName")) {
-      setName(localStorage.getItem("firstName").toString());
+    if (localStorage.getItem("email")) {
+      setName(localStorage.getItem("email").toString());
     }
   }, [name]);
 

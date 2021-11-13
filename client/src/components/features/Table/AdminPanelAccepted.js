@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import '../../pages/AdminPanel.css'
-import {HEROKU_API} from '../../../service/api-service'
+import {HEROKU_API,LOCAL_API} from '../../../service/api-service'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -93,6 +93,7 @@ export default function AdminPanelAccepted({type}) {
         </TableHead>
         <TableBody>
           {contacts.map((user,i) => (
+            user.isApproved === true && 
             <StyledTableRow key={i}>
               <StyledTableCell component="th" scope="row">
                 {user.email}

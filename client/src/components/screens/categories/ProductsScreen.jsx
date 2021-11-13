@@ -17,6 +17,7 @@ const ProductsScreen = ({ type }) => {
   const dispatch = useDispatch();
   const getProducts = useSelector((state) => state.getProductsByType);
   const { products, loading, error } = getProducts;
+  // const [offest]
 
   useEffect(() => {
     dispatch(listProducts(category[type]));

@@ -13,7 +13,8 @@ const getAllProducts = async (req,res) => {
 
 const getProductsByType = async (req,res) => {
     try {
-        const productsByType = await product.find({type:req.params.type});
+        const productsByType = await product.find({type:req.params.type})
+        // .limit(20).offset(req.params.offset) // 10-30
         res.json(productsByType);
 
     } catch(err) {

@@ -53,6 +53,7 @@ export default function AdminTablePanel() {
         </TableHead>
         <TableBody>
           {users.map((user,i) => (
+            user.isApproved === false &&
             <StyledTableRow key={i}>
               <StyledTableCell component="th" scope="row">
                 {user.email}
