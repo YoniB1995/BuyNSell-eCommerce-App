@@ -17,6 +17,7 @@ import ProductsScreen from "../screens/categories/ProductsScreen";
 import ProtectedRoute from "./ProtectedRoute";
 import DisplayProduct from "../features/Products/categories/DisplayProduct";
 import AdminPanel from "../pages/AdminPanel";
+import PermissionScreen from "../screens/PermissionScreen";
 import * as user from "../screens/auth/auth.user";
 import * as pagesRoutes from "../pages/pages.routes";
 import LandingSideDrawer from "../features/LandingPage/SideDrawer/LandingSideDrawer";
@@ -48,6 +49,9 @@ const RouterContainer = () => {
             {isLogin ? <CartScreen /> : <Redirect to="/login" />}
           </ProtectedRoute>
           <ProtectedRoute path="/adminpanel">
+            {isLogin ? <PermissionScreen /> : <Redirect to="/" />}
+          </ProtectedRoute>
+          <ProtectedRoute path="/adminpanel/a2df2f1">
             {isLogin ? <AdminPanel /> : <Redirect to="/" />}
           </ProtectedRoute>
           <Route exact path="/contactus" component={ContactUs} />
