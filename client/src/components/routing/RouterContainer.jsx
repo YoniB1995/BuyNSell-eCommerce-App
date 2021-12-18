@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Suspense, lazy } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,18 +10,25 @@ import Navbar from "../features/Navbar/NavbarNew";
 import SideDrawer from "../features/SideDrawer/SideDrawer";
 import Backdrop from "../features/Backdrop/Backdrop";
 import Footer from "../features/Footer/Footer";
-import RegisterScreen from "../screens/auth/register/RegisterScreen";
-import CartScreen from "../screens/Cartscreen";
-import ContactUs from "../pages/ContactUs";
-import ProductsScreen from "../screens/categories/ProductsScreen";
 import ProtectedRoute from "./ProtectedRoute";
-import DisplayProduct from "../features/Products/categories/DisplayProduct";
-import AdminPanel from "../pages/AdminPanel";
-import PermissionScreen from "../screens/PermissionScreen";
 import * as user from "../screens/auth/auth.user";
 import * as pagesRoutes from "../pages/pages.routes";
+
 import LandingSideDrawer from "../features/LandingPage/SideDrawer/LandingSideDrawer";
-import HomeScreen from "../screens/Homescreen";
+const RegisterScreen = lazy(() =>
+  import("../screens/auth/register/RegisterScreen")
+);
+const CartScreen = lazy(() => import("../screens/Cartscreen"));
+const ContactUs = lazy(() => import("../pages/ContactUs"));
+const ProductsScreen = lazy(() =>
+  import("../screens/categories/ProductsScreen")
+);
+const PermissionScreen = lazy(() => import("../screens/PermissionScreen"));
+const AdminPanel = lazy(() => import("../pages/AdminPanel"));
+const DisplayProduct = lazy(() =>
+  import("../features/Products/categories/DisplayProduct")
+);
+const HomeScreen = lazy(() => import("../screens/Homescreen"));
 
 const RouterContainer = () => {
   const [isLogin, setIsLogin] = useState(localStorage.getItem("authToken"));
@@ -51,7 +58,7 @@ const RouterContainer = () => {
           <ProtectedRoute path="/adminpanel">
             {isLogin ? <PermissionScreen /> : <Redirect to="/" />}
           </ProtectedRoute>
-          <ProtectedRoute path="/adminpanel/a2df2f1">
+          <ProtectedRoute path="/adminpanel/:id">
             {isLogin ? <AdminPanel /> : <Redirect to="/" />}
           </ProtectedRoute>
           <Route exact path="/contactus" component={ContactUs} />

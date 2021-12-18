@@ -1,6 +1,9 @@
-import ForgotPassScreen from './ForgotPassScreen'
-import LoginScreen from './LoginScreen'
-import PrivateScreen from './PrivateScreen'
-import ResetPassScreen from './ResetPassScreen'
+import { lazy } from "react";
+
+const ForgotPassScreen = lazy(() => import("./ForgotPassScreen"));
+const LoginScreen = lazy(() => import("./LoginScreen"));
+const PrivateScreen = lazy(() => import("./PrivateScreen"));
+const ResetPassScreen = lazy(() => import("./ResetPassScreen"));
+
 
 export {ForgotPassScreen, LoginScreen, PrivateScreen , ResetPassScreen }
