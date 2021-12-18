@@ -12,16 +12,16 @@
 
 
 
-<img src="https://serving.photos.photobox.com/548397971ee0cbddc2e08bf24cde01f7f7a9d39fe83ecb3d5e5b0d178996cb668f44eb09.jpg" />
-<img src="https://serving.photos.photobox.com/98494944614b7a390f5227a000f9ae77d997b43a0cc7da194aeaa4f02e5f99899df86fd1.jpg" />
-<img src="https://serving.photos.photobox.com/672095044b921a8d4f3689692c4a59e02dba218105a9984ffe3bfe9c8a475a01cc8eb6c3.jpg" />
+<img src="https://serving.photos.photobox.com/18285985c8eb6ee84b0e2d305496d172750a61ce1420f019a26f4d97581b31f97f553e9c.jpg" />
+<img src="https://serving.photos.photobox.com/05941233f2bf9bf73748449e567ca1cb087bee04640ae6f737460792495298b346cf9a79.jpg" />
+<img src="https://serving.photos.photobox.com/747612294a0739b46a9b61961e1da8ce8c7205c4a3440d9dee309f9f367b0a09bac4714f.jpg" />
 
 <h2> Responsive for Media - iPads & smartphones </h2>
-<img src="https://serving.photos.photobox.com/276030940a1688b64e1d2e245e0d5b622a116f38caad89be8fd6879ec66df450d60dc385.jpg" />
-<img src="https://serving.photos.photobox.com/333681815a45cfab3a1448e37d181a95ce2e23417fb63daaea6a24af928defeb806cfea7.jpg" />
+<img src="https://serving.photos.photobox.com/91459240dff19409f576048c12e938c98e32518b315e129716349dbdc41b17ef3545742a.jpg" />
+<img src="https://serving.photos.photobox.com/25336099e7653bfc84f5fcda0daec1d48a5b11688f6f58ab21b31f0744da94edc0d832b4.jpg" />
 
 <h2>Products Display</h2>
-<img src="https://serving.photos.photobox.com/155457751f1856c964abafaf4463bde6d7601aabf510e07a8e6babda771184600e8cab54.jpg" />
+<img src="https://serving.photos.photobox.com/73433415cb65646494b846a9548399fde65498ac04d4c4a252ecfeb6a7b83333136a9d96.jpg" />
 
 <h2>Partners Display & Footer </h2>
-<img src="https://serving.photos.photobox.com/740514595c7fa896143e632ed2c8d7351f9c3987bac99f4be8432bcb8e09851f6db542b4.jpg" />
+<img src="https://serving.photos.photobox.com/32314519a844bf3dc6f7290ce18401695fc9a5880dddff379828ad552c619762e5980067.jpg" />
